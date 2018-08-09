@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tourista</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+  </head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="HomePage.html">Tourista</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Guide with us! <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" href="#modalLRForm">Login/SignUp</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sign Up</a>
+      </li>
+    </ul>
+    <!--<form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+  </nav>
+
+  <!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button class="btn btn-info">Log in <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: Login / Register Form-->
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+  
+</body>
+</html>
