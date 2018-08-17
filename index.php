@@ -346,7 +346,7 @@
 				
 			}
 
-			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'gMobile_No.'")) > 0){
+			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'gMobile_No'")) > 0){
 				//Table Exists
 			}
 			else{
