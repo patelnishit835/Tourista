@@ -25,14 +25,14 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a href="#" class="nav-link">Home</a>
+					<li class="nav-item active">
+						<a href="index.php" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link">Guide with us!</a>
+						<a href="guide.php" class="nav-link">Guide with us!</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="modal" href="#modalLRForm">Login/SignUp</a>
+						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">Login/SignUp</a>
 					</li>
 					<!--<li class="nav-item">
 						<a href="#" class="nav-link">Sign Up</a>
@@ -111,7 +111,7 @@
 
 	                        <!--Body-->
 	                        <div class="modal-body mb-1">
-	                        	<form>
+	                        	<form action="index.php" method="POST">
 	                            <div class="md-form form-sm mb-5">
 	                                <i class="fa fa-envelope prefix"></i>
 	                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate" required>
@@ -144,39 +144,33 @@
 
 	                        <!--Body-->
 	                        <div class="modal-body">
-	                        	<form>
+	                        	<form action="index.php" method="POST">
 	                        	<div class="md-form form-sm mb-5">
 	                                <i class="fa fa-user prefix"></i>
-	                                <input type="text" id="modalLRInput12" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" required>
+	                                <input type="text" id="modalLRInput12" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
 	                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your Name</label>
 	                            </div>
 
 	                            <div class="md-form form-sm mb-5">
 	                                <i class="fa fa-phone prefix"></i>
-	                                <input type="text" id="modalLRInput13" class="form-control form-control-sm validate" pattern="[0-9]{10}" required>
+	                                <input type="text" id="modalLRInput13" class="form-control form-control-sm validate" pattern="[0-9]{10}" name="mobile" required>
 	                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your Phone Number</label>
 	                            </div>
 
 	                            <div class="md-form form-sm mb-5">
 	                                <i class="fa fa-envelope prefix"></i>
-	                                <input type="email" id="modalLRInput14" class="form-control form-control-sm validate" required>
+	                                <input type="email" id="modalLRInput14" class="form-control form-control-sm validate" name="email" required>
 	                                <label data-error="wrong" data-success="right" for="modalLRInput14">Your Email</label>
 	                            </div>
 
 	                            <div class="md-form form-sm mb-5">
 	                                <i class="fa fa-lock prefix"></i>
-	                                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true">
+	                                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
 	                                <label data-error="wrong" data-success="right" for="modalLRInput15">Your Password</label>
 	                            </div>
 
-	                            <div class="md-form form-sm mb-4">
-	                                <i class="fa fa-lock prefix"></i>
-	                                <input type="password" id="modalLRInput16" class="form-control form-control-sm validate" minlength="6" required="true">
-	                                <label data-error="wrong" data-success="right" for="modalLRInput16">Confirm Password</label>
-	                            </div>
-
 	                            <div class="text-center form-sm mt-2">
-	                                <button class="btn btn-info">Sign Up </button>
+	                                <button class="btn btn-info" type="submit" name="submit">Sign Up </button>
 	                            </div>
 	                            </form>
 	                        </div>
@@ -371,6 +365,27 @@
 			echo mysqli_error($conn);
 
 
+		if(isset($_POST['submit'])){
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$mobile = $_POST['mobile'];
+			$pass = $_POST['pass'];
+
+				$sql = "INSERT INTO User VALUES('$name','','$email','$mobile','$pass');";
+
+				if(mysqli_query($conn,$sql)) {
+					//echo "Table created successfully!!!"
+					echo "<script>
+							var l = document.getElementById('log');
+							l.innerHTML = '$name';
+							l.href = '#';
+						  </script>";
+				}
+				else {
+					echo mysqli_error($conn);
+					
+				}
+			}
 
 		?>
 
