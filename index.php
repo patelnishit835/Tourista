@@ -14,10 +14,13 @@
 	<!-- Material Design Bootstrap -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
 
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="script.js"></script>
+
 </head>
 <body background-color="rgb(244, 167, 66)">
 
-	<nav class="navbar navbar-expand-md navbar-light sticky-top bg-faded">
+	<nav class="navbar navbar-expand-md navbar-light sticky-top bg-faded" style="opacity:1" id="navbar">
 		<div class="container-fluid">
 			<a href="#" class="navbar-brand">Tourista</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -25,14 +28,14 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a href="index.php" class="nav-link">Home</a>
+					<li class="nav-item active nav-prod">
+						<a href="index.php" class="nav-link">HOME</a>
 					</li>
-					<li class="nav-item">
-						<a href="guide.php" class="nav-link">Guide with us!</a>
+					<li class="nav-item nav-prod">
+						<a href="guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">Login/SignUp</a>
+					<li class="nav-item nav-prod">
+						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
 					</li>
 					<!--<li class="nav-item">
 						<a href="#" class="nav-link">Sign Up</a>
@@ -56,20 +59,20 @@
 	    <div class="carousel-inner" role="listbox">
 	        <!--First slide-->
 	        <div class="carousel-item active">
-	            <img class="d-block w-100" src="north.jpg" alt="First slide">
+	            <img class="d-block w-100" src="north.jpg" alt="First slide" height="550px">
 	        </div>
 	        <!--/First slide-->
 	        <!--Second slide-->
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="west.jpg" alt="Second slide">
+	            <img class="d-block w-100" src="west.jpg" alt="Second slide" height="550px">
 	        </div>
 	        <!--/Second slide-->
 	        <!--Third slide-->
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="east.jpg" alt="Third slide">
+	            <img class="d-block w-100" src="east.jpg" alt="Third slide" height="550px">
 	        </div>
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="south.jpg" alt="Fourth slide">
+	            <img class="d-block w-100" src="south.jpg" alt="Fourth slide" height="550px">
 	        </div>
 	    </div>
 	    <!--/.Slides-->
@@ -95,7 +98,7 @@
 	            <div class="modal-c-tabs">
 
 	                <!-- Nav tabs -->
-	                <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
+	                <ul class="nav nav-tabs tabs-2 deep-orange lighten-2" role="tablist">
 	                    <li class="nav-item">
 	                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
 	                    </li>
@@ -124,16 +127,16 @@
 	                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your Password</label>
 	                            </div>
 	                            <div class="text-center mt-2">
-	                                <button class="btn btn-info">Log in</button>
+	                                <button class="btn btn-info deep-orange lighten-2">Log in</button>
 	                            </div>
 	                        	</form>
 	                        </div>
 	                        <!--Footer-->
 	                        <div class="modal-footer">
 	                            <div class="options text-center text-md-right mt-1">
-	                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+	                                <p><a href="#" class="orange-text">Forgot Password?</a></p>
 	                            </div>
-	                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+	                            <button type="button" class="btn btn-outline-orange waves-effect ml-auto" data-dismiss="modal">Close</button>
 	                        </div>
 
 	                    </div>
@@ -170,13 +173,13 @@
 	                            </div>
 
 	                            <div class="text-center form-sm mt-2">
-	                                <button class="btn btn-info" type="submit" name="submit">Sign Up </button>
+	                                <button class="btn btn-info deep-orange lighten-2" type="submit" name="submit">Sign Up </button>
 	                            </div>
 	                            </form>
 	                        </div>
 	                        <!--Footer-->
 	                        <div class="modal-footer">
-	                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+	                            <button type="button" class="btn btn-outline-orange waves-effect ml-auto" data-dismiss="modal">Close</button>
 	                        </div>
 	                    </div>
 	                    <!--/.Panel 8-->
@@ -185,6 +188,104 @@
 	        </div>
 	        <!--/.Content-->
 	    </div>
+	</div>
+
+	<div class = "para slideInUp">
+		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
+		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
+		</p>
+	</div>
+
+	
+	<div class="parallax1">
+		<div class="container">
+			<div class="centered">
+				<h1>ADVENTURE</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax2">
+		<div class="container">
+			<div class="centered">
+				<h1>FAMILY VACATION</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax3">
+		<div class="container">
+			<div class="centered">
+				<h1>HERITAGE</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax4">
+		<div class="container">
+			<div class="centered">
+				<h1>HILLS</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax5">
+		<div class="container">
+			<div class="centered">
+				<h1>BEACHES</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax6">
+		<div class="container">
+			<div class="centered">
+				<h1>LEISURE</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax7">
+		<div class="container">
+			<div class="centered">
+				<h1>PILGRIMAGE</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax8">
+		<div class="container">
+			<div class="centered">
+				<h1>WILDLIFE</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+	<div class="parallax9">
+		<div class="container">
+			<div class="centered">
+				<h1>ROMANCE</h1>
+				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
+				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+			</div>
+		</div>
+	</div>
+
+	<div class = "para slideInUp">
+		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
+		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
+		</p>
+		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
+		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
+		</p>
 	</div>
 
 	<!--PHP CODE FOR DATABASE CREATION -->
@@ -208,7 +309,6 @@
 					Password VARCHAR(50) NOT NULL,
 					PRIMARY KEY(UserID)
 				);";
-
 				if(mysqli_query($conn,$sql)) {
 					//echo "Table created successfully!!!"
 				}
@@ -216,7 +316,6 @@
 					echo mysqli_error($conn);
 				}
 			}
-
 			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'Place'")) > 0){
 				//Table Exists
 			}
@@ -238,9 +337,7 @@
 				else {
 					echo mysqli_error($conn);
 				}
-
 			}
-
 			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'Hotel'")) > 0){
 				//Table Exists
 			}
@@ -256,7 +353,6 @@
 					FOREIGN KEY(PlaceID) REFERENCES Place(PlaceID),
 					PRIMARY KEY(HotelID)
 				);";
-
 				if(mysqli_query($conn,$sql)) {
 					//echo "Table created successfully!!!"
 				}
@@ -265,7 +361,6 @@
 				}
 				
 			}
-
 			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'Guide'")) > 0){
 				//Table Exists
 			}
@@ -284,8 +379,6 @@
 					FOREIGN KEY(PlaceID) REFERENCES Place(PlaceID),
 					PRIMARY KEY(GuideID)
 				);";
-
-
 				if(mysqli_query($conn,$sql)) {
 					//echo "Table created successfully!!!"
 				}
@@ -293,7 +386,6 @@
 					echo mysqli_error($conn);
 				}
 			}
-
 			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'gRates'")) > 0){
 				//Table Exists
 			}
@@ -307,16 +399,13 @@
 					FOREIGN KEY(UserID) REFERENCES User(UserID),
 					PRIMARY KEY(GuideID,UserID)
 				);";
-
 				if(mysqli_query($conn,$sql)) {
 					//echo "Table created successfully!!!"
 				}
 				else {
 					echo mysqli_error($conn);
 				}
-
 			}
-
 			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'hRates'")) > 0){
 				//Table Exists
 			}
@@ -330,7 +419,6 @@
 					FOREIGN KEY(UserID) REFERENCES User(UserID),
 					PRIMARY KEY(HotelID,UserID)
 				);";
-
 				if(mysqli_query($conn,$sql)) {
 					//echo "Table created successfully!!!"
 				}
@@ -339,7 +427,6 @@
 				}
 				
 			}
-
 			if(mysqli_num_rows(mysqli_query($conn,"SHOW TABLES LIKE 'gMobile_No'")) > 0){
 				//Table Exists
 			}
@@ -351,7 +438,6 @@
 					FOREIGN KEY(GuideID) REFERENCES Guide(GuideID),
 					PRIMARY KEY(GuideID,Mobile_No)
 				);";
-
 				if(mysqli_query($conn,$sql)) {
 					//echo "Table created successfully!!!"
 				}
@@ -360,19 +446,14 @@
 				}	
 			}
 		}
-
 		else
 			echo mysqli_error($conn);
-
-
 		if(isset($_POST['submit'])){
 			$name = $_POST['name'];
 			$email = $_POST['email'];
 			$mobile = $_POST['mobile'];
 			$pass = $_POST['pass'];
-
 				$sql = "INSERT INTO User VALUES('$name','','$email','$mobile','$pass');";
-
 				if(mysqli_query($conn,$sql)) {
 					//echo "Table created successfully!!!"
 					echo "<script>
@@ -386,7 +467,6 @@
 					
 				}
 			}
-
 		?>
 
 	<!-- JQuery -->

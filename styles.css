@@ -1,0 +1,188 @@
+
+		.para {
+			margin : 10px;
+			padding : 30px;
+		}
+
+		body {
+			background-color: rgb(255, 255, 204);
+		}
+
+		.nav-prod {
+			font-family: arial;
+			font-weight: 10;
+			font-size: 15px;
+		}
+
+		.container {
+			position: center;
+			text-align: center;
+			color: white;
+			width: 100%;
+		}
+
+		.container .centered {
+			position: relative;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+			width: 100%;
+		}
+
+		.container .centered h1 {
+			color: #fff;
+			font-size: 90px;
+			font-family: arial;
+			text-align: center;
+			padding-top: 125px;
+		} 
+
+		.container .centered p {
+			color: #fff;
+			background-color:black;
+			opacity: 0.5;
+			border-top: white solid 2px;
+			border-bottom: white solid 2px;
+		}
+
+
+		.parallax1 { 
+		    /* The image used */
+		    background-image: url("adventure.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		 
+		}
+
+		.parallax2 {
+			background-image: url("family-vacation.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+	
+		}
+
+		.parallax3 {
+			background-image: url("heritage.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax4 {
+			background-image: url("hills.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax5 {
+			background-image: url("beaches.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax6 {
+			background-image: url("leisure.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax7 {
+			background-image: url("pilgrimage.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax8 {
+			background-image: url("wildlife.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax9 {
+			background-image: url("romantic.jpg");
+
+		    /* Set a specific height */
+		    height: 550px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+
+
