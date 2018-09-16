@@ -59,20 +59,20 @@
 	    <div class="carousel-inner" role="listbox">
 	        <!--First slide-->
 	        <div class="carousel-item active">
-	            <img class="d-block w-100" src="north.jpg" alt="First slide" height="550px">
+	            <img class="d-block w-100" src="north.jpg" alt="First slide" height="600px">
 	        </div>
 	        <!--/First slide-->
 	        <!--Second slide-->
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="west.jpg" alt="Second slide" height="550px">
+	            <img class="d-block w-100" src="west.jpg" alt="Second slide" height="600px">
 	        </div>
 	        <!--/Second slide-->
 	        <!--Third slide-->
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="east.jpg" alt="Third slide" height="550px">
+	            <img class="d-block w-100" src="east.jpg" alt="Third slide" height="600px">
 	        </div>
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="south.jpg" alt="Fourth slide" height="550px">
+	            <img class="d-block w-100" src="south.jpg" alt="Fourth slide" height="600px">
 	        </div>
 	    </div>
 	    <!--/.Slides-->
