@@ -57,17 +57,6 @@
 					      <li class="nav-item">
 					        <a class="nav-link" data-toggle="modal" href="#modalLRForm">Login/SignUp</a>
 					      </li>
-<!-- 					      <li class="nav-item dropdown">
-					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					          Dropdown
-					        </a>
-					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					          <a class="dropdown-item" href="#">Action</a>
-					          <a class="dropdown-item" href="#">Another action</a>
-					          <div class="dropdown-divider"></div>
-					          <a class="dropdown-item" href="#">Something else here</a>
-					        </div>
-					      </li> -->
 					      <li class="nav-item">
 					      	<a class="nav-link" href="#">ContactUs</a>
 					      </li>
@@ -85,7 +74,7 @@
 	<div class="space">
 		<section id="showcase">
 			<div class="container">
-				<div class="row">
+				<!-- <div class="row">
 					<div class="card-columns">
 						<div class="card">
 							<img src="goa1.jpg" class="card-img-top">
@@ -144,7 +133,13 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
+
+				<?php
+					$c = $_POST['cat'];
+					$conn = mysqli_connect('localhost','root','','Tourista');
+					$sql = "SELECT Description FROM Place";
+				?>
 			</div>
 		</section>
 	</div>

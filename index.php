@@ -202,7 +202,9 @@
 			<div class="centered">
 				<h1>ADVENTURE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="adventure" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -211,7 +213,9 @@
 			<div class="centered">
 				<h1>FAMILY VACATION</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="family" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -220,7 +224,9 @@
 			<div class="centered">
 				<h1>HERITAGE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="heritage" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -229,7 +235,9 @@
 			<div class="centered">
 				<h1>HILLS</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="hill" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -238,7 +246,9 @@
 			<div class="centered">
 				<h1>BEACHES</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="beaches" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -247,7 +257,9 @@
 			<div class="centered">
 				<h1>LEISURE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="leisure" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -256,7 +268,9 @@
 			<div class="centered">
 				<h1>PILGRIMAGE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="pilgrimage" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -265,7 +279,9 @@
 			<div class="centered">
 				<h1>WILDLIFE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="wildlife" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -274,7 +290,9 @@
 			<div class="centered">
 				<h1>ROMANCE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4">Know More</button>
+				<form action="Places.php" method="POST">
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="romance" name="cat" type="submit">Know More</button>
+				</form>
 			</div>
 		</div>
 	</div>
