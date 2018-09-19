@@ -45,7 +45,7 @@
 	<main class="backimg">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light bg-faded">
-				    <a class="navbar-brand" href="HomePage.html">Tourista</a>
+				    <a class="navbar-brand" href="index.php">Tourista</a>
 				    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				      <span class="navbar-toggler-icon"></span>
 				    </button>
@@ -138,7 +138,25 @@
 				<?php
 					$c = $_POST['cat'];
 					$conn = mysqli_connect('localhost','root','','Tourista');
-					$sql = "SELECT Description FROM Place";
+					$sql = "SELECT Name,Description,Image FROM Place WHERE Category = '$c'";
+					if($result=mysqli_query($conn,$sql)){
+						echo "<html><div class='row'>
+					<div class='card-columns'>";
+						while ($row=mysqli_fetch_assoc($result)) {
+							// echo $row['Name']."  " .$row['Description'];
+							$name = $row['Name'];
+							echo "<div class='card'><img src='goa1.jpg' class='card-img-top'><div class='card-body'>
+								<h5 class='card-title'>$name</h5>
+								<button class='card-text btn-success'>Know More</button>
+							</div>
+							</div>";
+
+						}
+						echo "</div></div></html>";
+					}
+					else{
+						mysqli_error($conn);
+					}
 				?>
 			</div>
 		</section>
