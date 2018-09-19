@@ -39,7 +39,7 @@
 
 		.container .centered p {
 			color: #fff;
-			background-color:black;
+			/*background-color:black;*/
 			opacity: 0.5;
 			border-top: white solid 2px;
 			border-bottom: white solid 2px;
@@ -48,7 +48,7 @@
 
 		.parallax1 { 
 		    /* The image used */
-		    background-image: url("adventure.jpg");
+		    background-image: url("adventure1.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
