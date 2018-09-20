@@ -6,6 +6,10 @@
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+  	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="mdb.min.css">
+  	<link rel="stylesheet" type="text/css" href="mdb.min.js">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -22,7 +26,7 @@
 
 	<nav class="navbar navbar-expand-md navbar-light sticky-top bg-faded" style="opacity:1" id="navbar">
 		<div class="container-fluid">
-			<a href="#" class="navbar-brand">Tourista</a>
+			<a href="index.php" class="navbar-brand">Tourista</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -202,7 +206,7 @@
 			<div class="centered">
 				<h1>ADVENTURE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="adventure" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -213,7 +217,7 @@
 			<div class="centered">
 				<h1>FAMILY VACATION</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="family" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -224,7 +228,7 @@
 			<div class="centered">
 				<h1>HERITAGE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="heritage" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -235,7 +239,7 @@
 			<div class="centered">
 				<h1>HILLS</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="hill" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -246,7 +250,7 @@
 			<div class="centered">
 				<h1>BEACHES</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="beaches" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -257,7 +261,7 @@
 			<div class="centered">
 				<h1>LEISURE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="leisure" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -268,7 +272,7 @@
 			<div class="centered">
 				<h1>PILGRIMAGE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="pilgrimage" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -279,7 +283,7 @@
 			<div class="centered">
 				<h1>WILDLIFE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="wildlife" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
@@ -290,7 +294,7 @@
 			<div class="centered">
 				<h1>ROMANCE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Places.php" method="POST">
+				<form action="Category.php" method="POST">
 					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="romance" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
