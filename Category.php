@@ -99,17 +99,24 @@
 
 						$count=0;
 						while ($row=mysqli_fetch_assoc($result)) {
-							// echo $row['Name']."  " .$row['Description'];
 							$name = $row['Name'];
 							$img = $row['Image'];
 							$desc = $row['Description'];
 							$count++;
+							$line = '';
+							if($fh = fopen($desc, 'r')){
+								$line = file_get_contents($desc);
+								$line = explode("\n", $line,2);
+								$line[0] = trim($line[0]);
+								fclose($fh);
+							}
+
 							echo "
 							<div class='card'>
 
 							<!-- Card image -->
 							<div class='view overlay'>
-							<img class='card-img-top' src='goa1.jpg'>
+							<img class='card-img-top' src='$img'>
 							<a>
 							  <div class='mask rgba-white-slight'></div>
 							</a>
@@ -122,7 +129,7 @@
 							<h4 class='card-title'>$name</h4>
 							<hr>
 							<!-- Text -->
-							<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card content.</p>
+							<p class='card-text'>$line[0]</p>
 							<!-- Link --> 
 							<a href='Places.php?place=$name' class='black-text d-flex justify-content-end' type='hidden'><h5>Know more <i class='fa fa-angle-double-right'></i></h5></a>
 
