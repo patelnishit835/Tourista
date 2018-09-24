@@ -22,9 +22,9 @@
 	<script type="text/javascript" src="script.js"></script>
 
 </head>
-<body background-color="rgb(244, 167, 66)">
+<body>
 
-	<nav class="navbar navbar-expand-md navbar-light sticky-top bg-faded" style="opacity:1" id="navbar">
+	<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="opacity:1" id="navbar">
 		<div class="container-fluid">
 			<a href="index.php" class="navbar-brand">Tourista</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -194,7 +194,7 @@
 	    </div>
 	</div>
 
-	<div class = "para slideInUp">
+	<div class = "para slideInUp" style = "color : white;">
 		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
 		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
 		</p>
@@ -301,7 +301,7 @@
 		</div>
 	</div>
 
-	<div class = "para slideInUp">
+	<div class = "para slideInUp" style = "color : white;">
 		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
 		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
 		</p>
