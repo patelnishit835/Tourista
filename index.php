@@ -49,7 +49,7 @@
 		</div>
 	</nav>
 
-	<!--Carousel Wrapper-->
+<!--Carousel Wrapper-->
 	<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
 	    <!--Indicators-->
 	    <ol class="carousel-indicators">
@@ -61,17 +61,12 @@
 	    <!--/.Indicators-->
 	    <!--Slides-->
 	    <div class="carousel-inner" role="listbox">
-	        <!--First slide-->
 	        <div class="carousel-item active">
 	            <img class="d-block w-100" src="north.jpg" alt="First slide" height="600px">
 	        </div>
-	        <!--/First slide-->
-	        <!--Second slide-->
 	        <div class="carousel-item">
 	            <img class="d-block w-100" src="west.jpg" alt="Second slide" height="600px">
 	        </div>
-	        <!--/Second slide-->
-	        <!--Third slide-->
 	        <div class="carousel-item">
 	            <img class="d-block w-100" src="east.jpg" alt="Third slide" height="600px">
 	        </div>
@@ -131,16 +126,16 @@
 	                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your Password</label>
 	                            </div>
 	                            <div class="text-center mt-2">
-	                                <button class="btn btn-info deep-orange lighten-2">Log in</button>
+	                                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2">Log in</button>
 	                            </div>
 	                        	</form>
 	                        </div>
 	                        <!--Footer-->
 	                        <div class="modal-footer">
 	                            <div class="options text-center text-md-right mt-1">
-	                                <p><a href="#" class="orange-text">Forgot Password?</a></p>
+	                                <p><a href="#" class="black-text">Forgot Password?</a></p>
 	                            </div>
-	                            <button type="button" class="btn btn-outline-orange waves-effect ml-auto" data-dismiss="modal">Close</button>
+	                            <button type="button" class="btn btn-outline-black waves-effect ml-auto" data-dismiss="modal">Close</button>
 	                        </div>
 
 	                    </div>
@@ -177,13 +172,13 @@
 	                            </div>
 
 	                            <div class="text-center form-sm mt-2">
-	                                <button class="btn btn-info deep-orange lighten-2" type="submit" name="submit">Sign Up </button>
+	                                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit">Sign Up </button>
 	                            </div>
 	                            </form>
 	                        </div>
 	                        <!--Footer-->
 	                        <div class="modal-footer">
-	                            <button type="button" class="btn btn-outline-orange waves-effect ml-auto" data-dismiss="modal">Close</button>
+	                            <button type="button" class="btn btn-outline-black waves-effect ml-auto" data-dismiss="modal">Close</button>
 	                        </div>
 	                    </div>
 	                    <!--/.Panel 8-->

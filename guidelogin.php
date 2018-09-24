@@ -17,34 +17,10 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src="script.js"></script>
 
-	<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-md navbar-light sticky-top bg-faded" style="opacity:1" id="navbar">
+	<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-faded" style="opacity:1" id="navbar">
 		<div class="container-fluid">
 			<a href="#" class="navbar-brand">Tourista</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -56,79 +32,92 @@
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
 					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN</a>
+						<a class="nav-link" data-toggle="modal" href="#signin" id="log">LOGIN</a>
 					</li>
 					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">SIGN UP</a>
+						<a class="nav-link" data-toggle="modal" href="#signup" id="log">SIGN UP</a>
 					</li>
-					<!--<li class="nav-item">
-						<a href="#" class="nav-link">Sign Up</a>
-					</li>-->
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content cascading-modal" role="document">
+	  	        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+					<form action="index.php" method="POST">
+						<div class="modal-body mb-1">
+				            <div class="md-form form-sm mb-5">
+				                <i class="fa fa-envelope prefix"></i>
+				                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="email" required>
+				                <label data-error="wrong" data-success="right" for="modalLRInput13">Email</label>
+				            </div>
 
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+				            <div class="md-form form-sm mb-5">
+				                <i class="fa fa-lock prefix"></i>
+				                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
+				                <label data-error="wrong" data-success="right" for="modalLRInput15">Password</label>
+				            </div>
 
-			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<!-- <form class="login100-form validate-form"> -->
-								<form action="index.php" method="POST">
-	                        	<div class="md-form form-sm mb-5">
-	                                <i class="fa fa-user prefix"></i>
-	                                <input type="text" id="modalLRInput12" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
-	                                <label data-error="wrong" data-success="right" for="modalLRInput12">Name</label>
-	                            </div>
-
-	                            <div class="md-form form-sm mb-5">
-	                                <i class="fa fa-envelope prefix"></i>
-	                                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="email" required>
-	                                <label data-error="wrong" data-success="right" for="modalLRInput13">Email</label>
-	                            </div>
-
-	                            <div class="md-form form-sm mb-5">
-	                                <i class="fa fa-phone prefix"></i>
-	                                <input type="text" id="modalLRInput14" class="form-control form-control-sm validate" pattern="[0-9]{10}" name="mobile" required>
-	                                <label data-error="wrong" data-success="right" for="modalLRInput14">Phone Number</label>
-	                            </div>
-
-	                            <div class="md-form form-sm mb-5">
-	                                <i class="fa fa-lock prefix"></i>
-	                                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
-	                                <label data-error="wrong" data-success="right" for="modalLRInput15">Password</label>
-	                            </div>
-
-	                           	<div class="md-form form-sm mb-5">
-	                                <i class="fa fa-address-card prefix"></i>
-	                                <input type="text" id="modalLRInput16" class="form-control form-control-sm validate" size="12" required="true" name="aadhar">
-	                                <label data-error="wrong" data-success="right" for="modalLRInput16">Aadhar Number</label>
-	                            </div>
-
-	                            <div class="text-center form-sm mt-2">
-	                                <button class="btn btn-info deep-orange lighten-2" type="submit" name="submit">Sign Up </button>
-	                            </div>
-	                            <!-- </form> -->
-				</form>
+				            <div class="text-center form-sm mt-2">
+					            <button class="btn btn-info btn-outline-black lighten-1 waves-effect ml-auto" type="submit" name="submit">SignIn</button>
+					        </div>
+			            </div>
+			            <div class="modal-footer">    
+				       		<button type="button" class="btn btn-outline-black waves-effect ml-auto" data-dismiss="modal">Close</button>
+				        </div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-	
-<!--===============================================================================================-->
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content cascading-modal" role="document">
+	  	        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+					<form action="index.php" method="POST">
+						<div class="modal-body mb-1">
+				        	<div class="md-form form-sm mb-5">
+				                <i class="fa fa-user prefix"></i>
+				                <input type="text" id="modalLRInput12" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
+				                <label data-error="wrong" data-success="right" for="modalLRInput12">Name</label>
+				            </div>
 
+				            <div class="md-form form-sm mb-5">
+				                <i class="fa fa-envelope prefix"></i>
+				                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="email" required>
+				                <label data-error="wrong" data-success="right" for="modalLRInput13">Email</label>
+				            </div>
+
+				            <div class="md-form form-sm mb-5">
+				                <i class="fa fa-phone prefix"></i>
+				                <input type="text" id="modalLRInput14" class="form-control form-control-sm validate" pattern="[0-9]{10}" name="mobile" required>
+				                <label data-error="wrong" data-success="right" for="modalLRInput14">Phone Number</label>
+				            </div>
+
+				            <div class="md-form form-sm mb-5">
+				                <i class="fa fa-lock prefix"></i>
+				                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
+				                <label data-error="wrong" data-success="right" for="modalLRInput15">Password</label>
+				            </div>
+
+				           	<div class="md-form form-sm mb-5">
+				                <i class="fa fa-address-card prefix"></i>
+				                <input type="text" id="modalLRInput16" class="form-control form-control-sm validate" size="12" required="true" name="aadhar">
+				                <label data-error="wrong" data-success="right" for="modalLRInput16">Aadhar Number</label>
+				            </div>
+				            <div class="text-center form-sm mt-2">
+					            <button class="btn btn-info btn-outline-black lighten-1 waves-effect ml-auto" type="submit" name="submit">Sign Up</button>
+					        </div>
+			            </div>
+			            <div class="modal-footer">    
+				       		<button type="button" class="btn btn-outline-black waves-effect ml-auto" data-dismiss="modal">Close</button>
+				        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap tooltips -->
