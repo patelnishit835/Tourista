@@ -37,6 +37,9 @@
 					<li class="nav-item nav-prod">
 						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
 					</li>
+					<li class="nav-item nav-prod">
+						<a class="nav-link" href="Logout.php" id="logout">Logout</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -298,9 +301,18 @@
 		</p>
 	</div>
 
-	<!--PHP CODE FOR DATABASE CREATION -->
+		<?php
 
-		<?PHP
+		session_start();
+		if(isset($_SESSION['login_user'])){
+				$s=$_SESSION['login_user'];
+				  echo "<script>
+						var l = document.getElementById('log');
+						l.innerHTML = '$s';
+						l.href = '#';
+					  </script>";
+		}
+
 		$conn = mysqli_connect("localhost","root","");
 				
 		$sql_create = "CREATE DATABASE IF NOT EXISTS Tourista";
@@ -458,26 +470,28 @@
 		}
 		else
 			echo mysqli_error($conn);
-		
-		if(isset($_POST['submit'])){
-			$name = $_POST['name'];
-			$email = $_POST['email'];
-			$mobile = $_POST['mobile'];
-			$pass = $_POST['pass'];
-				$sql = "INSERT INTO User VALUES('$name','','$email','$mobile','$pass');";
-				if(mysqli_query($conn,$sql)) {
-					//echo "Table created successfully!!!"
-					echo "<script>
-							var l = document.getElementById('log');
-							l.innerHTML = '$name';
-							l.href = '#';
-						  </script>";
+
+			if(isset($_POST['submit'])){
+				$name = $_POST['name'];
+				$email = $_POST['email'];
+				$mobile = $_POST['mobile'];
+				$pass = $_POST['pass'];
+					$sql = "INSERT INTO User VALUES('$name','','$email','$mobile','$pass');";
+					if(mysqli_query($conn,$sql)) {
+						//echo "Table created successfully!!!"
+						session_start();
+						$_SESSION['login_user']=$name;
+						  echo "<script>
+								var l = document.getElementById('log');
+								l.innerHTML = '$name';
+								l.href = '#';
+							  </script>";
+					}
+					else {
+						echo mysqli_error($conn);
+						
+					}
 				}
-				else {
-					echo mysqli_error($conn);
-					
-				}
-			}
 		?>
 
 	<!-- JQuery -->
