@@ -35,7 +35,7 @@
 						<a class="nav-link" data-toggle="modal" href="#signin" id="log">LOGIN</a>
 					</li>
 					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#signup" id="log">SIGN UP</a>
+						<a class="nav-link" data-toggle="modal" href="#signup" id="up">SIGN UP</a>
 					</li>
 				</ul>
 			</div>
@@ -75,7 +75,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content cascading-modal" role="document">
 	  	        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-					<form action="index.php" method="POST">
+					<form action="#" method="POST">
 						<div class="modal-body mb-1">
 				        	<div class="md-form form-sm mb-5">
 				                <i class="fa fa-user prefix"></i>
@@ -118,6 +118,49 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- PHP CODE -->
+
+	<?php
+
+		$conn = mysqli_connect("localhost","root","","Tourista");
+
+		if(isset($_POST['submit'])){
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$mobile = $_POST['mobile'];
+			$pass = $_POST['pass'];
+			$aadhar = $_POST['aadhar'];
+			$sql = "INSERT INTO Guide VALUES('$name','','$email','$pass','$aadhar','','','','');";
+			if(mysqli_query($conn,$sql)) {
+				//echo "Table created successfully!!!"
+				echo "<script>
+						var l = document.getElementById('up');
+						l.innerHTML = '$name';
+						l.href = '#';
+						myFunction();
+					  </script>";
+			}
+			else {
+				echo mysqli_error($conn);
+				
+			}
+		}
+
+	?>
+
+	<script>
+		function myFunction() {
+		    var x = document.getElementById("log");
+		    if (x.style.display === "none") {
+		        x.style.display = "block";
+		    } else {
+		        x.style.display = "none";
+		    }
+		}
+	</script>
+
+
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap tooltips -->
