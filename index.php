@@ -6,10 +6,6 @@
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-  	<link rel="stylesheet" type="text/css" href="mdb.min.css">
-  	<link rel="stylesheet" type="text/css" href="mdb.min.js">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -36,14 +32,11 @@
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
 					<li class="nav-item nav-prod">
-						<a href="guide.php" class="nav-link">GUIDE WITH US!</a>
+						<a href="guidelogin.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
 					<li class="nav-item nav-prod">
 						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
 					</li>
-					<!--<li class="nav-item">
-						<a href="#" class="nav-link">Sign Up</a>
-					</li>-->
 				</ul>
 			</div>
 		</div>
