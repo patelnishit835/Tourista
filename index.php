@@ -308,8 +308,8 @@
 	<!--PHP CODE FOR DATABASE CREATION -->
 
 		<?PHP
-				
 		$conn = mysqli_connect("localhost","root","");
+				
 		$sql_create = "CREATE DATABASE IF NOT EXISTS Tourista";
 		if(mysqli_query($conn,$sql_create)){
 			$conn = mysqli_connect("localhost","root","","Tourista");
@@ -465,6 +465,7 @@
 		}
 		else
 			echo mysqli_error($conn);
+		
 		if(isset($_POST['submit'])){
 			$name = $_POST['name'];
 			$email = $_POST['email'];
