@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +73,6 @@
 
 				<?php
 
-					session_start();
 					if(isset($_SESSION['login_user'])){
 							$s=$_SESSION['login_user'];
 							echo "<script>

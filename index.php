@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -303,14 +306,14 @@
 
 		<?php
 
-		session_start();
 		if(isset($_SESSION['login_user'])){
+
 				$s=$_SESSION['login_user'];
 				  echo "<script>
 						var l = document.getElementById('log');
 						l.innerHTML = '$s';
 						l.href = '#';
-					  </script>";
+					  	</script>";
 		}
 
 		$conn = mysqli_connect("localhost","root","");
@@ -485,7 +488,7 @@
 								var l = document.getElementById('log');
 								l.innerHTML = '$name';
 								l.href = '#';
-							  </script>";
+							  	</script>";
 					}
 					else {
 						echo mysqli_error($conn);
