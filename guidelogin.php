@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,17 +49,17 @@
 		<div class="modal-dialog">
 			<div class="modal-content cascading-modal" role="document">
 	  	        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-					<form action="index.php" method="POST">
+					<form action="GuideUserProfile.php" method="POST">
 						<div class="modal-body mb-1">
 				            <div class="md-form form-sm mb-5">
 				                <i class="fa fa-envelope prefix"></i>
-				                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="email" required>
+				                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="email2" required>
 				                <label data-error="wrong" data-success="right" for="modalLRInput13">Email</label>
 				            </div>
 
 				            <div class="md-form form-sm mb-5">
 				                <i class="fa fa-lock prefix"></i>
-				                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
+				                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass2">
 				                <label data-error="wrong" data-success="right" for="modalLRInput15">Password</label>
 				            </div>
 
@@ -75,7 +79,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content cascading-modal" role="document">
 	  	        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-					<form action="#" method="POST">
+					<form action="GuideUserProfile.php" method="POST">
 						<div class="modal-body mb-1">
 				        	<div class="md-form form-sm mb-5">
 				                <i class="fa fa-user prefix"></i>
@@ -107,7 +111,7 @@
 				                <label data-error="wrong" data-success="right" for="modalLRInput16">Aadhar Number</label>
 				            </div>
 				            <div class="text-center form-sm mt-2">
-					            <button class="btn btn-info btn-outline-black lighten-1 waves-effect ml-auto" type="submit" name="submit">Sign Up</button>
+					            <button class="btn btn-info btn-outline-black lighten-1 waves-effect ml-auto" type="submit" name="submit2">Sign Up</button>
 					        </div>
 			            </div>
 			            <div class="modal-footer">    
@@ -123,41 +127,29 @@
 
 	<?php
 
-		$conn = mysqli_connect("localhost","root","","Tourista");
-
-		if(isset($_POST['submit'])){
-			$name = $_POST['name'];
-			$email = $_POST['email'];
-			$mobile = $_POST['mobile'];
-			$pass = $_POST['pass'];
-			$aadhar = $_POST['aadhar'];
-			$sql = "INSERT INTO Guide VALUES('$name','','$email','$pass','$aadhar','','','','');";
-			if(mysqli_query($conn,$sql)) {
-				//echo "Table created successfully!!!"
-				echo "<script>
-						var l = document.getElementById('up');
-						l.innerHTML = '$name';
-						l.href = '#';
-						myFunction();
-					  </script>";
+		if(isset($_SESSION['guide_user_signup']))
+		{
+			$name = $_SESSION['guide_user_signup'];
+			echo "<script>
+			var l = document.getElementById('up');
+			l.innerHTML = '$name';
+			l.href = '#';
+			myFunction();
+			function myFunction() {
+			    var x = document.getElementById('log');
+			    if (x.style.display === 'none') {
+			        x.style.display = 'block';
+			    } else {
+			        x.style.display = 'none';
+			    }
 			}
-			else {
-				echo mysqli_error($conn);
-				
-			}
+		  </script>";
 		}
 
 	?>
 
 	<script>
-		function myFunction() {
-		    var x = document.getElementById("log");
-		    if (x.style.display === "none") {
-		        x.style.display = "block";
-		    } else {
-		        x.style.display = "none";
-		    }
-		}
+		
 	</script>
 
 
