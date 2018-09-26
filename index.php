@@ -96,7 +96,7 @@
 	            <div class="modal-c-tabs">
 
 	                <!-- Nav tabs -->
-	                <ul class="nav nav-tabs tabs-2 deep-orange lighten-2" role="tablist">
+	                <ul class="nav nav-tabs tabs-2 black lighten-2" role="tablist">
 	                    <li class="nav-item">
 	                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
 	                    </li>
