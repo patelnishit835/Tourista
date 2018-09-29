@@ -34,22 +34,37 @@ session_start();
 					<li class="nav-item active nav-prod">
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
-					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#signin" id="log">LOGIN</a>
+					<li class="d-lg-none nav-item nav-prod">
+						<a href="index.php" class="nav-link">Profile</a>
 					</li>
-					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#signup" id="up">SIGN UP</a>
+					<li class="d-lg-none nav-item nav-prod">
+						<a href="index.php" class="nav-link">Setting</a>
+					</li>
+					<li class="d-lg-none nav-item nav-prod">
+						<a href="index.php" class="nav-link">Log Out</a>
 					</li>
 				</ul>
+				<div class="d-none d-lg-block dropdown">
+				  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User Name  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a class="dropdown-item" href="#">Profile</a>
+				    <a class="dropdown-item" href="#">Setting</a>
+				    <div class="dropdown-divider"></div>
+				    <a class="dropdown-item" href="#">Log Out</a>
+				  </div>
+				</div>
 			</div>
 		</div>
 	</nav>
+
+
 	
+
 
 	<!-- PHP CODE -->
 
 	<?php
-
+		
 		// $conn = mysqli_connect("localhost","root","","Tourista");
 		if(isset($_SESSION['guide_user_signup']))
 		{
