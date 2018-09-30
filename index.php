@@ -9,21 +9,24 @@
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+
+ 	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap core CSS -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src="script.js"></script>
 
 </head>
-<body class="black-skin">
-
-	<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="opacity:1" id="navbar">
+<body>
+	
+	<nav class="navbar navbar-expand-md navbar-dark sticky-top" id="navbar" style="background-color: rgba(32,32,32,0.75)">
 		<div class="container-fluid">
 			<a href="index.php" class="navbar-brand">Tourista</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -31,9 +34,11 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
+					<div style="background-color: rgba(224, 18, 29, 0.75)">
 					<li class="nav-item active nav-prod">
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
+					</div>
 					<li class="nav-item nav-prod">
 						<a href="guidelogin.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
@@ -47,6 +52,7 @@
 			</div>
 		</div>
 	</nav>
+	
 
 <!--Carousel Wrapper-->
 	<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -61,7 +67,7 @@
 	    <!--Slides-->
 	    <div class="carousel-inner" role="listbox">
 	        <div class="carousel-item active">
-	            <img class="d-block w-100" src="north.jpg" alt="First slide" height="600px">
+	            <img class="d-block w-100" src="north1.jpg" alt="First slide" height="600px">
 	        </div>
 	        <div class="carousel-item">
 	            <img class="d-block w-100" src="west.jpg" alt="Second slide" height="600px">
@@ -115,17 +121,17 @@
 	                        	<form action="index.php" method="POST">
 	                            <div class="md-form form-sm mb-5">
 	                                <i class="fa fa-envelope prefix"></i>
-	                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate" required>
+	                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate" required name="id">
 	                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Email</label>
 	                            </div>
 
 	                            <div class="md-form form-sm mb-4">
 	                                <i class="fa fa-lock prefix"></i>
-	                                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate" minlength="6" required="true">
+	                                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
 	                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your Password</label>
 	                            </div>
 	                            <div class="text-center mt-2">
-	                                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2">Log in</button>
+	                                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="login">Log in</button>
 	                            </div>
 	                        	</form>
 	                        </div>
@@ -192,6 +198,13 @@
 		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
 		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
 		</p>
+		
+		<div class="container">
+			<form id="demo-2" action="index.php" method="POST">
+				<input type="search" placeholder="Search your place..." class="fonts">
+			</form>
+		</div>
+		
 	</div>
 
 	
@@ -295,14 +308,77 @@
 		</div>
 	</div>
 
-	<div class = "para slideInUp" style = "color : white;">
+	<!-- <div class = "para slideInUp" style = "color : white;">
 		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
 		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
 		</p>
 		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
 		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
 		</p>
-	</div>
+	</div> -->
+
+	<!-- Footer -->
+<footer class="page-footer font-small" style="background-color: rgba(32,32,32,1)">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-12 py-5">
+          <div class="mb-5 flex-center">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
+            </a>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+
+      <!-- Grid row-->
+      <div class="row">
+      	<div class="para col-md-12 py-5" align="center" style="font-family: arial; font-size: 15px">
+	    	<p>This project is developed by Nishit Patel, Akshay Kotak and Hardik Rathod as a part of their Third Year project.</p>
+	    </div>
+      </div>
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="index.php"> Tourista.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
 
 		<?php
 
@@ -474,39 +550,88 @@
 		else
 			echo mysqli_error($conn);
 
-			if(isset($_POST['submit'])){
-				$name = $_POST['name'];
-				$email = $_POST['email'];
-				$mobile = $_POST['mobile'];
-				$pass = $_POST['pass'];
-					$sql = "INSERT INTO User VALUES('$name','','$email','$mobile','$pass');";
-					if(mysqli_query($conn,$sql)) {
-						//echo "Table created successfully!!!"
-						session_start();
-						$_SESSION['login_user']=$name;
-						  echo "<script>
-								var l = document.getElementById('log');
-								l.innerHTML = '$name';
-								l.href = '#';
-							  	</script>";
-					}
-					else {
-						echo mysqli_error($conn);
-						
-					}
+		/*-------------------------------SIGNUP REGISTRATION---------------------------------*/
+
+		if(isset($_POST['submit'])){
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$mobile = $_POST['mobile'];
+			$pass = $_POST['pass'];
+				$sql = "INSERT INTO User VALUES('$name','','$email','$mobile','$pass');";
+				if(mysqli_query($conn,$sql)) {
+					//echo "Table created successfully!!!"
+					$_SESSION['login_user']=$name;
+					  echo "<script>
+							var l = document.getElementById('log');
+							l.innerHTML = '$name';
+							l.href = '#';
+						  	</script>";
 				}
+				else {
+					echo mysqli_error($conn);
+					
+				}
+			}
+
+
+		/*-------------------------LOGIN AUTHENTICATION-------------------------------*/
+
+		if(isset($_POST['login'])) {
+			$id = $_POST['id'];
+			$pass = $_POST['pass'];
+			$count = 0;
+
+			$sql = "SELECT Password,EmailID
+					FROM User
+					WHERE EmailID = '$id' AND Password = '$pass'";
+
+			$result = mysqli_query($conn, $sql);
+			$count = mysqli_num_rows($result);
+
+			if($count == 0) {
+				echo "Invalid username or password....";
+			}
+			else {
+				$query = "SELECT Name
+						 FROM User
+						 WHERE EmailID = '$id' AND Password = '$pass' limit 1";
+
+				$name = mysqli_fetch_array(mysqli_query($conn, $query));
+				$_SESSION['login_user']=$name[0];
+				  echo "<script>
+						var l = document.getElementById('log');
+						l.innerHTML = '$name[0]';
+						l.href = '#';
+					  	</script>";
+			}
+		}
+		else {
+					echo mysqli_error($conn);
+					
+				}
+
+
+
 		?>
 
 	<!-- JQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap tooltips -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script> -->
 	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+	<!-- <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script> -->  
 	
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
 </body>
 </html>
