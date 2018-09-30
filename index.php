@@ -21,7 +21,7 @@
 	<script type="text/javascript" src="script.js"></script>
 
 </head>
-<body>
+<body class="black-skin">
 
 	<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="opacity:1" id="navbar">
 		<div class="container-fluid">

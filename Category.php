@@ -134,7 +134,7 @@
 							}
 
 							echo "
-							<div class='card heartBeat'>
+							<div class='card heartBeat hoverable'>
 
 							<!-- Card image -->
 							<div class='view overlay'>
