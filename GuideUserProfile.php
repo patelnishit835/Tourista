@@ -23,7 +23,7 @@ session_start();
 </head>
 <body class="black-skin">
 
-	<nav class="navbar navbar-expand-md sticky-top bg-faded" style="opacity:1" id="navbar">
+	<nav class="navbar navbar-expand-md  navbar-dark sticky-top bg-faded" style="opacity:1" id="navbar">
 		<div class="container-fluid">
 			<a href="#" class="navbar-brand">Tourista</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -57,6 +57,16 @@ session_start();
 		</div>
 	</nav>
 
+	<!--Jumbotron-->
+	<div class="jumbotron jumbotron-fluid">
+
+	    <div class="container">
+	        <h1 class="h1-reponsive mb-4 mt-2 blue-text font-bold">Fluid jumbotron</h1>
+	        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+	    </div>
+
+	</div>
+	<!--Jumbotron-->
 
 	
 
@@ -73,65 +83,6 @@ session_start();
 		}
 		
 
-		$conn = mysqli_connect("localhost","root","","Tourista");
-		if(isset($_POST['submit']))
-		{
-			$email = $_POST['email2'];
-			$pass = $_POST['pass2'];
-			$sql = "Select * from Guide where EmailID = '$email' and Password = '$pass';";
-			$result=mysqli_query($conn,$sql);
-			if(mysqli_num_rows($result)==1)
-			{
-				$row = mysqli_fetch_assoc($result);
-				$username = $row['Name'];
-				$_SESSION['guide_user_signup']=$username;
-				echo "<script>
-						var l = document.getElementById('up');
-						l.innerHTML = '$username';
-						l.href = '#';
-						myFunction();
-						function myFunction() {
-						    var x = document.getElementById('log');
-						    if (x.style.display === 'none') {
-						        x.style.display = 'block';
-						    } else {
-						        x.style.display = 'none';
-						    }
-						}
-					  </script>";
-			}
-
-		}
-
-		if(isset($_POST['submit2'])){
-			$name = $_POST['name'];
-			$email = $_POST['email'];
-			$mobile = $_POST['mobile'];
-			$pass = $_POST['pass'];
-			$aadhar = $_POST['aadhar'];
-			$sql = "INSERT INTO Guide VALUES('$name','','$email','$pass','$aadhar','/xyz','1','Goa','1');";
-			if(mysqli_query($conn,$sql)) {
-				$_SESSION['guide_user_signup']=$name;
-				echo "<script>
-						var l = document.getElementById('up');
-						l.innerHTML = '$name';
-						l.href = '#';
-						myFunction();
-						function myFunction() {
-						    var x = document.getElementById('log');
-						    if (x.style.display === 'none') {
-						        x.style.display = 'block';
-						    } else {
-						        x.style.display = 'none';
-						    }
-						}
-					  </script>";
-			}
-			else {
-				echo mysqli_error($conn);
-				
-			}
-		}
 	?>
 
 
