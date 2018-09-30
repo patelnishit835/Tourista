@@ -134,7 +134,7 @@
 							}
 
 							echo "
-							<div class='card'>
+							<div class='card heartBeat'>
 
 							<!-- Card image -->
 							<div class='view overlay'>
