@@ -50,7 +50,7 @@ session_start();
 				    <a class="dropdown-item" href="#">Profile</a>
 				    <a class="dropdown-item" href="#">Setting</a>
 				    <div class="dropdown-divider"></div>
-				    <a class="dropdown-item" href="#">Log Out</a>
+				    <a class="dropdown-item" href="Logout.php">Log Out</a>
 				  </div>
 				</div>
 			</div>
