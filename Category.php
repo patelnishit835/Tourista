@@ -82,7 +82,7 @@
 						  	</script>";
 					}
 
-					$c = $_POST['cat'];
+					$c = $_GET['category'];
 					$conn = mysqli_connect('localhost','root','','Tourista');
 					$sql = "SELECT Name,Description,Image FROM Place WHERE Category = '$c'";
 					if($result=mysqli_query($conn,$sql)){
@@ -148,7 +148,7 @@
 							<div class='card-body'>
 
 							<!-- Title -->
-							<h4 class='card-title' style='text-align:left;'>$name</h4>
+							<h4 class='card-title' style='text-align:left;color:black;'>$name</h4>
 							<hr>
 							<!-- Text -->
 							<p class='card-text' style='color:black;text-align:left;'>$line[0]</p>

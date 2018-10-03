@@ -213,9 +213,9 @@
 			<div class="centered">
 				<h1>ADVENTURE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="adventure" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="adventure" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -224,8 +224,8 @@
 			<div class="centered">
 				<h1>FAMILY VACATION</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="family" name="cat" type="submit">Know More</button>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="family" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
 		</div>
@@ -235,9 +235,9 @@
 			<div class="centered">
 				<h1>HERITAGE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="heritage" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="heritage" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -246,9 +246,9 @@
 			<div class="centered">
 				<h1>HILLS</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="hill" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="hill" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -257,9 +257,9 @@
 			<div class="centered">
 				<h1>BEACHES</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="beaches" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="beaches" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -268,9 +268,9 @@
 			<div class="centered">
 				<h1>LEISURE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="leisure" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="leisure" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -279,9 +279,9 @@
 			<div class="centered">
 				<h1>PILGRIMAGE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="pilgrimage" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="pilgrimage" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -290,9 +290,9 @@
 			<div class="centered">
 				<h1>WILDLIFE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="wildlife" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="wildlife" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -301,9 +301,9 @@
 			<div class="centered">
 				<h1>ROMANCE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
-				<form action="Category.php" method="POST">
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4" value="romance" name="cat" type="submit">Know More</button>
-				</form>
+				<!-- <form action="Category.php" method="POST"> -->
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="romance" name="cat" type="submit">Know More</button>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -614,14 +614,17 @@
 
 		?>
 
+
+
+
 	<!-- JQuery -->
 	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- Bootstrap tooltips -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script> -->
+	Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
 	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script> -->
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 	<!-- <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script> -->  
 	
@@ -633,5 +636,14 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).on('click', '.onc', function() {
+			var cat = $(this).val();
+			window.location = 'Category.php?category=' + cat;
+		});
+			
+	</script>
+
 </body>
 </html>
