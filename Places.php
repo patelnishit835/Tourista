@@ -74,7 +74,7 @@
 		?>
 
 	<!-- Nav tabs -->
- <ul class="nav nav-tabs md-tabs nav-justified indigo" role="tablist">
+ <ul class="nav nav-tabs md-tabs nav-justified" style="background-color: rgb(128,0,0)" role="tablist">
      <li class="nav-item">
          <a class="nav-link active" data-toggle="tab" href="#parent" role="tab"><i class="fa fa-map-marker"></i> Description</a>
      </li>
