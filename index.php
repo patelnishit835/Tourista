@@ -40,7 +40,7 @@
 					</li>
 					</div>
 					<li class="nav-item nav-prod">
-						<a href="guidelogin.php" class="nav-link">GUIDE WITH US!</a>
+						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
 					<li class="nav-item nav-prod">
 						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
