@@ -36,90 +36,163 @@
 			</div>
 		</div>
 	</nav>
-	<div class="card-deck">
-		<!--News card-->
-		<div class="card col-6 text-red border-danger bg-light text-center">
-		    <div class="card-body">
-		    	<h3 class="card-title font-bold pb-2"><strong>Add Place</strong></h3>
-		        <div class="row">
-		            <div class="col-md-4 offset-md-1 mx-3 my-5">
-		                <!--Featured image-->
-		                <div class="view overlay">
-		                    <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
-		                    <a>
-		                        <div class="mask rgba-white-slight"></div>
-		                    </a>
-		                    <button type="button" class="btn btn-default waves-effect ml-auto">Upload Picture</button>
-		                </div>
-		            </div>
-		            <div class="col-md-7 text-left ml-3 mt-3">
-		            	<form>
-		            		<div class="md-form form-sm mb-2">
-		                        <input type="text" id="Input1" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
-		                        <label data-error="wrong" data-success="right" for="Input1">Place Name</label>
-		                    </div>
-		                    <div class="md-form form-sm mb-2">
-		                        <input type="text" id="Input2" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="category" required>
-		                        <label data-error="wrong" data-success="right" for="Input2">Category</label>
-		                    </div>
-		                    <div class="md-form form-sm mb-2">
-		                        <input type="text" id="Input3" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="parentplace" required>
-		                        <label data-error="wrong" data-success="right" for="Input3">Parent Place</label>
-		                    </div>
-		                    <div class="input-group mb-2">
-		                    	  <div class="input-group-prepend">
-								    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+
+	<div class="row mt-3">
+		<div class="card-deck">
+			<!--News card-->
+			<div class="card col-6 text-red border-danger bg-light text-center">
+			    <div class="card-body">
+			    	<h3 class="card-title font-bold pb-2"><strong>Add Place</strong></h3>
+			        <div class="row">
+			            <div class="col-md-4 offset-md-1 mx-3 my-5">
+			                <!--Featured image-->
+			                <div class="view overlay">
+			                    <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+			                    <a>
+			                        <div class="mask rgba-white-slight"></div>
+			                    </a>
+			                    <button type="button" class="btn btn-default waves-effect ml-auto">Upload Picture</button>
+			                </div>
+			            </div>
+			            <div class="col-md-7 text-left ml-3 mt-3">
+			            	<form>
+			            		<div class="md-form form-sm mb-2">
+			                        <input type="text" id="Input1" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
+			                        <label data-error="wrong" data-success="right" for="Input1">Place Name</label>
+			                    </div>
+			                    <div class="md-form form-sm mb-2">
+			                        <input type="text" id="Input2" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="category" required>
+			                        <label data-error="wrong" data-success="right" for="Input2">Category</label>
+			                    </div>
+			                    <div class="md-form form-sm mb-2">
+			                        <input type="text" id="Input3" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="parentplace" required>
+			                        <label data-error="wrong" data-success="right" for="Input3">Parent Place</label>
+			                    </div>
+			                    <div class="input-group mb-2">
+			                    	  <div class="input-group-prepend">
+									    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+									  </div>
+								  <div class="custom-file">
+								    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+								    <label class="custom-file-label" for="inputGroupFile01">Upload Description</label>
 								  </div>
-							  <div class="custom-file">
-							    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-							    <label class="custom-file-label" for="inputGroupFile01">Upload Description</label>
-							  </div>
-							</div>
-		            	</form>	     			
-		            </div>
-		        </div>
-		    </div>
-		</div>
-		<div class="card col-6 text-red border-danger bg-light text-center">
-		    <div class="card-body">
-		    	<h3 class="card-title font-bold pb-2"><strong>Add Hotel</strong></h3>
-		        <div class="row">
-		            <div class="col-md-4 offset-md-1 mx-3 my-5">
-		                <!--Featured image-->
-		                <div class="view overlay">
-		                    <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
-		                    <a>
-		                        <div class="mask rgba-white-slight"></div>
-		                    </a>
-		                    <button type="button" class="btn btn-default waves-effect ml-auto">Upload Picture</button>
-		                </div>
-		            </div>
-		            <div class="col-md-7 text-left ml-3 mt-3">
-		            	<form>
-		            		<div class="md-form form-sm mb-2">
-		                        <input type="text" id="Input4" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
-		                        <label data-error="wrong" data-success="right" for="Input4">Hotel Name</label>
-		                    </div>
-		                    <div class="md-form form-sm mb-2">
-		                        <input type="text" id="Input5" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="category" required>
-		                        <label data-error="wrong" data-success="right" for="Input5">Location</label>
-		                    </div>
-		                    <div class="input-group mb-2">
-		                      <div class="input-group-prepend">
-							    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-							  </div>
-							  <div class="custom-file">
-							    <input type="file" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon01">
-							    <label class="custom-file-label" for="inputGroupFile02">Upload Description</label>
-							  </div>
-							</div>
-		            	</form>	     			
-		            </div>
-		        </div>
-		    </div>
+								</div>
+			            	</form>	     			
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="card col-6 text-red border-danger bg-light text-center">
+			    <div class="card-body">
+			    	<h3 class="card-title font-bold pb-2"><strong>Add Hotel</strong></h3>
+			        <div class="row">
+			            <div class="col-md-4 offset-md-1 mx-3 my-5">
+			                <!--Featured image-->
+			                <div class="view overlay">
+			                    <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+			                    <a>
+			                        <div class="mask rgba-white-slight"></div>
+			                    </a>
+			                    <button type="button" class="btn btn-default waves-effect ml-auto">Upload Picture</button>
+			                </div>
+			            </div>
+			            <div class="col-md-7 text-left ml-3 mt-3">
+			            	<form>
+			            		<div class="md-form form-sm mb-2">
+			                        <input type="text" id="Input4" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
+			                        <label data-error="wrong" data-success="right" for="Input4">Hotel Name</label>
+			                    </div>
+			                    <div class="md-form form-sm mb-2">
+			                        <input type="text" id="Input5" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="category" required>
+			                        <label data-error="wrong" data-success="right" for="Input5">Location</label>
+			                    </div>
+			                    <div class="input-group mb-2">
+			                      <div class="input-group-prepend">
+								    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+								  </div>
+								  <div class="custom-file">
+								    <input type="file" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon01">
+								    <label class="custom-file-label" for="inputGroupFile02">Upload Description</label>
+								  </div>
+								</div>
+			            	</form>	     			
+			            </div>
+			        </div>
+			    </div>
+			</div>
 		</div>
 	</div>
 
+	<div class="row mt-3">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-right">
+                      <p class="mb-0 text-right">Total Users</p>
+                      <div class="fluid-container">
+                        <h3 class="font-weight-medium text-right mb-0">650</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">
+                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> Number Of Users
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-right">
+                      <p class="mb-0 text-right">Guides</p>
+                      <div class="fluid-container">
+                        <h3 class="font-weight-medium text-right mb-0">455</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">
+                    <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Number Of Guides
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-right">
+                      <p class="mb-0 text-right">Places</p>
+                      <div class="fluid-container">
+                        <h3 class="font-weight-medium text-right mb-0">1000</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">
+                    <i class="mdi mdi-calendar mr-1" aria-hidden="true"></i> Number Of Places
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-right">
+                      <p class="mb-0 text-right">Hotels</p>
+                      <div class="fluid-container">
+                        <h3 class="font-weight-medium text-right mb-0">246</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">
+                    <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Number Of Hotels
+                  </p>
+                </div>
+              </div>
+            </div>
+    </div>
 
 
 
