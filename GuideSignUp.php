@@ -86,6 +86,23 @@
 		  			</div>
 		  		</div>		  		
 		  	</div>
+		  	<div class="row">
+	            <div class="md-form form-sm mb-4">
+	                <i class="fa fa-envelope prefix"></i>
+	                <input type="email" id="name" class="form-control form-control-sm validate" name="name" required>
+	                <label data-error="wrong" data-success="right" for="name">Enter Name</label>
+	            </div>
+		  		<div class="md-form form-sm mb-4 float-right">
+	                <i class="fa fa-envelope prefix"></i>
+	                <input type="email" id="email" class="form-control form-control-sm validate" name="id" required>
+	                <label data-error="wrong" data-success="right" for="email">Enter Email</label>
+	            </div>
+	        </div>
+            <div class="md-form form-sm mb-4">
+                <i class="fa fa-envelope prefix"></i>
+                <input type="password" id="password" class="form-control form-control-sm validate" name="password" required>
+                <label data-error="wrong" data-success="right" for="password">Enter Password</label>
+            </div>
 		  </div>
 		</div>
 	</div>
