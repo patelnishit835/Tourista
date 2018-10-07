@@ -1,2 +1,0 @@
-# Tourista
-Third year project
