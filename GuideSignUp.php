@@ -86,7 +86,7 @@
 		  			</div>
 		  		</div>		  		
 		  	</div>
-		  	<div class="row">
+		  	<div class="row">	
 	            <div class="md-form form-sm mb-4">
 	                <i class="fa fa-envelope prefix"></i>
 	                <input type="email" id="name" class="form-control form-control-sm validate" name="name" required>
