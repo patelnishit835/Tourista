@@ -1,0 +1,249 @@
+
+		.para {
+			margin : 10px;
+			padding : 30px;
+		}
+
+		body {
+			background-color: rgba(32,32,32,1);
+		}
+
+		.nav-prod {
+			font-family: arial;
+			font-weight: 10;
+			font-size: 15px;
+		}
+
+		.container {
+			position: center;
+			text-align: center;
+			color: white;
+			width: 100%;
+		}
+
+		.container .centered {
+			position: relative;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+			width: 100%;
+		}
+
+		.container .centered h1 {
+			color: #fff;
+			font-size: 90px;
+			font-family: arial;
+			text-align: center;
+			padding-top: 125px;
+		} 
+
+		.container .centered p {
+			color: #fff;
+			/*background-color:black;*/
+			opacity: 0.5;
+			border-top: white solid 2px;
+			border-bottom: white solid 2px;
+		}
+
+
+		.parallax1 { 
+		    /* The image used */
+		    background-image: url("adventure1.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		 
+		}
+
+		.parallax2 {
+			background-image: url("family-vacation.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+	
+		}
+
+		.parallax3 {
+			background-image: url("heritage.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax4 {
+			background-image: url("hills.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax5 {
+			background-image: url("beaches.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax6 {
+			background-image: url("leisure.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax7 {
+			background-image: url("pilgrimage.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax8 {
+			background-image: url("wildlife.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		.parallax9 {
+			background-image: url("romantic.jpg");
+
+		    /* Set a specific height */
+		    height: 610px; 
+		    width: 100%;
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+
+		}
+
+		input {
+			outline: none;
+		}
+		input[type=search] {
+			-webkit-appearance: textfield;
+			-webkit-box-sizing: content-box;
+			font-family: inherit;
+			font-size: 100%;
+		}
+		input::-webkit-search-decoration,
+		input::-webkit-search-cancel-button {
+			display: none; 
+		}
+
+
+		input[type=search] {
+			background: #ededed url(loc.png) no-repeat 15px center;
+			border: solid 1px #ccc;
+			padding: 9px 10px 9px 32px;
+			width: 80px;
+			
+			-webkit-border-radius: 20em;
+			-moz-border-radius: 20em;
+			border-radius: 20em;
+			
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			transition: all .5s;
+		}
+
+		/* Demo 2 */
+		#demo-2 input[type=search] {
+			width: 40px;
+			height: 40px;
+			padding-left: 10px;
+			color: transparent;
+			cursor: pointer;
+		}
+		#demo-2 input[type=search]:hover {
+			background: #ededed url(loc1.png) no-repeat 15px center;
+			background-color: rgb(224, 18, 29);
+			height: 45px;
+			width: 45px;
+		}
+		#demo-2 input[type=search]:focus {
+			width: 70%;
+			padding-left: 60px;
+			color: #000;
+			background-color: #ffff;
+			cursor: auto;
+			height: 25px;
+		}
+		#demo-2 input:-moz-placeholder {
+			color: transparent;
+		}
+		#demo-2 input::-webkit-input-placeholder {
+			color: transparent;
+		}
+
+		.fonts{
+			font-family: arial;
+			font-size: 30px;
+		}
