@@ -87,22 +87,43 @@
 		  		</div>		  		
 		  	</div>
 		  	<div class="row">	
-	            <div class="md-form form-sm mb-4">
-	                <i class="fa fa-envelope prefix"></i>
+	            <div class="md-form form-sm mb-4 col-md-6">
+	                <i class="fa fa-user prefix"></i>
 	                <input type="email" id="name" class="form-control form-control-sm validate" name="name" required>
-	                <label data-error="wrong" data-success="right" for="name">Enter Name</label>
+	                <label data-error="wrong" data-success="right" for="name" style="margin-left: 3.1rem;">Enter Name</label>
 	            </div>
-		  		<div class="md-form form-sm mb-4 float-right">
+		  		<div class="md-form form-sm mb-4 float-right col-md-6">
 	                <i class="fa fa-envelope prefix"></i>
 	                <input type="email" id="email" class="form-control form-control-sm validate" name="id" required>
-	                <label data-error="wrong" data-success="right" for="email">Enter Email</label>
+	                <label data-error="wrong" data-success="right" for="email" style="margin-left: 3.1rem;">Enter Email</label>
 	            </div>
 	        </div>
-            <div class="md-form form-sm mb-4">
-                <i class="fa fa-envelope prefix"></i>
-                <input type="password" id="password" class="form-control form-control-sm validate" name="password" required>
-                <label data-error="wrong" data-success="right" for="password">Enter Password</label>
-            </div>
+	        <div class="row">
+	            <div class="md-form form-sm mb-4 col-md-6">
+	                <i class="fa fa-lock prefix"></i>
+	                <input type="password" id="password" class="form-control form-control-sm validate" name="password" required>
+	                <label data-error="wrong" data-success="right" for="password" style="margin-left: 3.1rem;">Enter Password</label>
+	            </div>
+	            <div class="md-form form-sm mb-4 float-right col-md-6">
+	                <i class="fa fa-credit-card prefix"></i>
+	                <input type="number" id="aadhar" class="form-control form-control-sm validate" name="id" required>
+	                <label data-error="wrong" data-success="right" for="email" style="margin-left: 3.1rem;">Enter Aadhar</label>
+	            </div>
+	        </div>
+	        <div class="row">
+	            <div class="md-form form-sm mb-4 col-md-6">
+	                <i class="fa fa-lock prefix"></i>
+	                <input type="text" id="place" class="form-control form-control-sm validate" name="password" required>
+	                <label data-error="wrong" data-success="right" for="password" style="margin-left: 3.1rem;">Place of Work</label>
+	            </div>	
+            	<div class="md-form form-sm mb-4 col-md-6">
+	            	<!-- Default switch -->
+					<label class="bs-switch">
+					  <input type="checkbox">
+					  <span class="slider round"></span>
+					</label>  
+	            	<label class="prefix" style="margin-left: 4.1rem" class="pt-1">Availability</label>  
+	            </div>	        	
 		  </div>
 		</div>
 	</div>
