@@ -67,16 +67,16 @@
 	    <!--Slides-->
 	    <div class="carousel-inner" role="listbox">
 	        <div class="carousel-item active">
-	            <img class="d-block w-100" src="north1.jpg" alt="First slide" height="600px">
+	            <img class="d-block w-100" src="Homepage Images/north1.jpg" alt="First slide" height="600px">
 	        </div>
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="west.jpg" alt="Second slide" height="600px">
+	            <img class="d-block w-100" src="Homepage Images/west.jpg" alt="Second slide" height="600px">
 	        </div>
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="east.jpg" alt="Third slide" height="600px">
+	            <img class="d-block w-100" src="Homepage Images/east.jpg" alt="Third slide" height="600px">
 	        </div>
 	        <div class="carousel-item">
-	            <img class="d-block w-100" src="south.jpg" alt="Fourth slide" height="600px">
+	            <img class="d-block w-100" src="Homepage Images/south.jpg" alt="Fourth slide" height="600px">
 	        </div>
 	    </div>
 	    <!--/.Slides-->
@@ -200,9 +200,10 @@
 		</p>
 		
 		<div class="container">
-			<form id="demo-2" action="index.php" method="POST">
+			<form id="demo-2" action="index.php" method="POST" id="keyword">
 				<input type="search" placeholder="Search your place..." class="fonts">
 			</form>
+			<div class="result"></div>
 		</div>
 		
 	</div>
@@ -611,6 +612,15 @@
 				}
 
 
+	/*------------------------------------AJAX LIVE SEARCH-----------------------------------------*/
+
+	$arr = array();
+
+	if(!empty($_POST['keywords'])) {
+
+	}
+
+
 
 		?>
 
@@ -636,11 +646,30 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+	
 	<script type="text/javascript">
 		
 		$(document).on('click', '.onc', function() {
 			var cat = $(this).val();
 			window.location = 'Category.php?category=' + cat;
+		});
+
+		$(document).ready(function() {
+			$('#keyword').on("keyup input", function() {
+
+				// Get input value on change
+
+				var inputVal = $(this).val();
+
+				var resultDropdown = $(this).siblings(".result");
+
+				if(inputVal.length) {
+					$.get("index.php", {term: inputVal}).done(function(data) {
+						resultDropdown.html(data);
+					});
+				}
+
+			});
 		});
 			
 	</script>

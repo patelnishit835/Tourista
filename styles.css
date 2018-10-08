@@ -48,7 +48,7 @@
 
 		.parallax1 { 
 		    /* The image used */
-		    background-image: url("adventure1.jpg");
+		    background-image: url("Homepage Images/adventure1.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -64,7 +64,7 @@
 		}
 
 		.parallax2 {
-			background-image: url("family-vacation.jpg");
+			background-image: url("Homepage Images/family-vacation.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -80,7 +80,7 @@
 		}
 
 		.parallax3 {
-			background-image: url("heritage.jpg");
+			background-image: url("Homepage Images/heritage.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -95,7 +95,7 @@
 		}
 
 		.parallax4 {
-			background-image: url("hills.jpg");
+			background-image: url("Homepage Images/hills.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -110,7 +110,7 @@
 		}
 
 		.parallax5 {
-			background-image: url("beaches.jpg");
+			background-image: url("Homepage Images/beaches.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -125,7 +125,7 @@
 		}
 
 		.parallax6 {
-			background-image: url("leisure.jpg");
+			background-image: url("Homepage Images/leisure.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -140,7 +140,7 @@
 		}
 
 		.parallax7 {
-			background-image: url("pilgrimage.jpg");
+			background-image: url("Homepage Images/pilgrimage.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -155,7 +155,7 @@
 		}
 
 		.parallax8 {
-			background-image: url("wildlife.jpg");
+			background-image: url("Homepage Images/wildlife.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -170,7 +170,7 @@
 		}
 
 		.parallax9 {
-			background-image: url("romantic.jpg");
+			background-image: url("Homepage Images/romantic.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
