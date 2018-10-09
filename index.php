@@ -201,7 +201,7 @@
 		
 		<div class="container">
 			<form id="demo-2" action="index.php" method="POST" id="keyword">
-				<input type="search" placeholder="Search your place..." class="fonts">
+				<input type="search" name="search" placeholder="Search your place..." class="fonts">
 			</form>
 			<div class="result"></div>
 		</div>
@@ -612,19 +612,69 @@
 				}
 
 
-	/*------------------------------------AJAX LIVE SEARCH-----------------------------------------*/
+	/*------------------------------------LIVE SEARCH-----------------------------------------*/
 
-	$arr = array();
+		// if(isset($_REQUEST["term"])){
+		//     // Prepare a select statement
+		//     $sql = "SELECT Name
+		//     		FROM Place
+		//     		WHERE Name LIKE ?";
+		    
+		//     if($stmt = mysqli_prepare($conn, $sql)){
+		//         // Bind variables to the prepared statement as parameters
+		//         mysqli_stmt_bind_param($stmt, "s", $param_term);
+		        
+		//         // Set parameters
+		//         $param_term = $_REQUEST["term"] . '%';
+		        
+		//         // Attempt to execute the prepared statement
+		//         if(mysqli_stmt_execute($stmt)){
+		//             $result = mysqli_stmt_get_result($stmt);
+		            
+		//             // Check number of rows in the result set
+		//             if(mysqli_num_rows($result) > 0){
+		//                 // Fetch result rows as an associative array
+		//                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+		//                     echo "<p>" . $row["name"] . "</p>";
+		//                 }
+		//             } else{
+		//                 echo "<p>No matches found</p>";
+		//             }
+		//          } else{
+		//             echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+		//         }
+		//     }
+		// }
 
-	if(!empty($_POST['keywords'])) {
+		if(isset($_POST['search'])) {
 
-	}
+			$val = $_POST['search'];
+
+			$sql = "SELECT Name
+		    		FROM Place
+		    		WHERE Name LIKE '%$val%'";
+
+		    $q = mysqli_query($conn, $sql);
+		    $count = mysqli_num_rows($q);
+		    $op = '';
+
+		    if($count == 0) {
+		    	$op = 'No results!';
+		    }
+		    else {
+		    	while ($row = mysqli_fetch_array($q)) {
+
+		    		$name = $row['Name'];
+
+		    		$op = '<div>'.$name.'</div>';
+		    	}
+		    }
+
+		}
 
 
 
-		?>
-
-
+	?>
 
 
 	<!-- JQuery -->
@@ -668,9 +718,24 @@
 						resultDropdown.html(data);
 					});
 				}
+				else {
+					resultDropdown.empty();
+				}
 
 			});
+
+			// Set search input value on selecting the item
+
+			$(document).on("click", ".result p", function() {
+
+				$(this).parents(".search-box").find('input[type  = "text"]').val($(this).text());
+
+				$(this).parent(".result").empty();
+			});
+
 		});
+
+
 			
 	</script>
 
