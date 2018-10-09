@@ -118,13 +118,28 @@
 	            </div>	
             	<div class="md-form form-sm mb-4 col-md-6">
 	            	<!-- Default switch -->
-					<label class="bs-switch">
+					<label class="bs-switch ml-3">
 					  <input type="checkbox">
 					  <span class="slider round"></span>
 					</label>  
-	            	<label class="prefix" style="margin-left: 4.1rem" class="pt-1">Availability</label>  
+	            	<label class="prefix mt-1" style="margin-left: 5.1rem">Availability</label>  
 	            </div>	        	
 		  </div>
+		  <div class="row">
+	            <div class="md-form form-sm mb-2 col-md-6">
+	                <i class="fa fa-phone prefix"></i>
+	                <input type="number" id="mobile" class="form-control form-control-sm validate" name="password" required>
+	                <label data-error="wrong" data-success="right" for="mobile" style="margin-left: 3.1rem;">Enter Mobile Number</label>
+	            </div>
+	            <div class="md-form form-sm mb-2 float-right col-md-6">
+	                <i class="fa fa-map-marker prefix"></i>
+	                <input type="text" id="work" class="form-control form-control-sm validate" name="id" required>
+	                <label data-error="wrong" data-success="right" for="work" style="margin-left: 3.1rem;">Enter Place of Work</label>
+	            </div>
+	        </div>
+        	<div class="center text-center form-sm mt-1">
+                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit">SignUp</button>
+            </div>
 		</div>
 	</div>
 
