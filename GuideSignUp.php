@@ -69,7 +69,7 @@
 
 	<div class="col-11 mx-auto">
 		<div class="card mt-3 bg-light">
-		<form method="POST" action="GuideSignUp.php">
+		<form method="POST" action="GuideSignUp.php" enctype="multipart/form-data">
 		  <div class="card-header text-center">
 		    <h4><strong> Guide SignUp </strong></h4>
 		  </div>
@@ -83,14 +83,14 @@
 		  			</div>
 		  			<div>
 		  				<!-- <button class="btn btn-secondary" onclick="document.getElementById('imageUpload').click(); return false;">Upload Photo</button> -->
-		  				<input type="file" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg"/>
+		  				<input type="file" name="profilepic" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg"/>
 		  			</div>
 		  		</div>		  		
 		  	</div>
 		  	<div class="row">	
 	            <div class="md-form form-sm mb-4 col-md-6">
 	                <i class="fa fa-user prefix"></i>
-	                <input type="email" id="name" class="form-control form-control-sm validate" name="name" required>
+	                <input type="text" id="name" class="form-control form-control-sm validate" name="name" required>
 	                <label data-error="wrong" data-success="right" for="name" style="margin-left: 3.1rem;">Enter Name</label>
 	            </div>
 		  		<div class="md-form form-sm mb-4 float-right col-md-6">
@@ -114,7 +114,7 @@
 	        <div class="row">
 	            <div class="md-form form-sm mb-2 float-right col-md-6">
 	                <i class="fa fa-map-marker prefix"></i>
-	                <input type="text" id="work" class="form-control form-control-sm validate" name="id" required>
+	                <input type="text" id="work" class="form-control form-control-sm validate" name="work" required>
 	                <label data-error="wrong" data-success="right" for="work" style="margin-left: 3.1rem;">Enter Place of Work</label>
 	            </div>
             	<div class="md-form form-sm mb-4 col-md-6">
@@ -168,16 +168,31 @@
 
 
 	<?php
-		// if(isset($_POST['submit'])){
-				// $name = $_POST['name'];
-				// $email = $_POST['id'];
-				$otp = rand(10000000,99999999);
-				$to      = 'akshaykotak2102@gmail.com';
-				$subject = 'Tourista Email Verification';
-				$message = "Your otp - ".$otp."\n"."Use it and verify yourself or else just get lost"."\n\n\n\n\n"."Regards,\nTourista.";
-				$headers = 'From: hardik.pr@somaiya.edu';
-				mail($to, $subject, $message, $headers);
-		// }
+		if(isset($_POST['submit'])){
+
+			$conn = mysqli_connect("localhost","root","","Tourista");
+
+			$target = "Guide/".basename($_FILES['profilepic']['name']);
+			move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
+			
+			$name = $_POST['name'];
+			$email = $_POST['id'];
+			$password = $_POST['password'];
+			$aadhar = $_POST['aadhar'];
+			$profilepic = $_FILES['profilepic']['name'];
+
+			$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic','True','Goa','1')";
+
+			if(mysqli_query($conn,$sql)){
+				echo"Successful";
+			}
+			// $otp = rand(10000000,99999999);
+			// $to      = 'akshaykotak2102@gmail.com';
+			// $subject = 'Tourista Email Verification';
+			// $message = "Your otp - ".$otp."\n"."Use it and verify yourself or else just get lost"."\n\n\n\n\n"."Regards,\nTourista.";
+			// $headers = 'From: hardik.pr@somaiya.edu';
+			// mail($to, $subject, $message, $headers);
+		}
 
 	?>
 	<!-- JQuery -->
