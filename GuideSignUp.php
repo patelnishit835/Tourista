@@ -69,6 +69,7 @@
 
 	<div class="col-11 mx-auto">
 		<div class="card mt-3 bg-light">
+		<form method="POST" action="GuideSignUp.php">
 		  <div class="card-header text-center">
 		    <h4><strong> Guide SignUp </strong></h4>
 		  </div>
@@ -106,16 +107,16 @@
 	            </div>
 	            <div class="md-form form-sm mb-4 float-right col-md-6">
 	                <i class="fa fa-credit-card prefix"></i>
-	                <input type="number" id="aadhar" class="form-control form-control-sm validate" name="id" required>
-	                <label data-error="wrong" data-success="right" for="email" style="margin-left: 3.1rem;">Enter Aadhar</label>
+	                <input type="number" id="aadhar" class="form-control form-control-sm validate" name="aadhar" required>
+	                <label data-error="wrong" data-success="right" for="aadhar" style="margin-left: 3.1rem;">Enter Aadhar</label>
 	            </div>
 	        </div>
 	        <div class="row">
-	            <div class="md-form form-sm mb-4 col-md-6">
-	                <i class="fa fa-lock prefix"></i>
-	                <input type="text" id="place" class="form-control form-control-sm validate" name="password" required>
-	                <label data-error="wrong" data-success="right" for="password" style="margin-left: 3.1rem;">Place of Work</label>
-	            </div>	
+	            <div class="md-form form-sm mb-2 float-right col-md-6">
+	                <i class="fa fa-map-marker prefix"></i>
+	                <input type="text" id="work" class="form-control form-control-sm validate" name="id" required>
+	                <label data-error="wrong" data-success="right" for="work" style="margin-left: 3.1rem;">Enter Place of Work</label>
+	            </div>
             	<div class="md-form form-sm mb-4 col-md-6">
 	            	<!-- Default switch -->
 					<label class="bs-switch ml-3">
@@ -128,24 +129,57 @@
 		  <div class="row">
 	            <div class="md-form form-sm mb-2 col-md-6">
 	                <i class="fa fa-phone prefix"></i>
-	                <input type="number" id="mobile" class="form-control form-control-sm validate" name="password" required>
+	                <input type="number" id="mobile" class="form-control form-control-sm validate" name="mobile" required>
 	                <label data-error="wrong" data-success="right" for="mobile" style="margin-left: 3.1rem;">Enter Mobile Number</label>
-	            </div>
-	            <div class="md-form form-sm mb-2 float-right col-md-6">
-	                <i class="fa fa-map-marker prefix"></i>
-	                <input type="text" id="work" class="form-control form-control-sm validate" name="id" required>
-	                <label data-error="wrong" data-success="right" for="work" style="margin-left: 3.1rem;">Enter Place of Work</label>
 	            </div>
 	        </div>
         	<div class="center text-center form-sm mt-1">
                 <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit">SignUp</button>
             </div>
 		</div>
+		</form>
+	</div>
+
+		<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+	  Launch demo modal
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">Email Verification</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+            <input type="number" id="otp" class="form-control form-control-sm validate" name="id" required>
+            <label data-error="wrong" data-success="right" for="otp">Enter OTP</label>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2">Submit</button>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
 
+	<?php
+		// if(isset($_POST['submit'])){
+				// $name = $_POST['name'];
+				// $email = $_POST['id'];
+				$otp = rand(10000000,99999999);
+				$to      = 'akshaykotak2102@gmail.com';
+				$subject = 'Tourista Email Verification';
+				$message = "Your otp - ".$otp."\n"."Use it and verify yourself or else just get lost"."\n\n\n\n\n"."Regards,\nTourista.";
+				$headers = 'From: hardik.pr@somaiya.edu';
+				mail($to, $subject, $message, $headers);
+		// }
 
-
+	?>
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap tooltips -->
