@@ -203,7 +203,7 @@
 			<form id="demo-2" action="search.php" method="POST">
 				<input type="search" name="search" placeholder="Search your place..." class="fonts" id="search">
 			</form>
-			<div id="display"></div>
+			<div id="display" class="autocomplete"></div>
 		</div>
 		
 	</div>
@@ -825,6 +825,15 @@
 
 		   });
 
+		});
+
+		$(document).ready(function() {
+
+			$(".para").click(function() {
+				$("#display").html("");
+
+				$("#search").val("");
+			});
 		});
 			
 	</script>

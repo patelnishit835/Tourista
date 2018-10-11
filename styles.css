@@ -76,6 +76,16 @@
 	        cursor: pointer;
 	    }
 
+	    /*Suggestions css*/
+
+	    .autocomplete {
+	    	background-color: white;
+	    	width: 70%;
+	    	color: black;
+	    	text-align: left;
+	    	align-self: center;
+	    }
+
 
 		.parallax1 { 
 		    /* The image used */
