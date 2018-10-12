@@ -69,7 +69,7 @@
 
 	<div class="col-11 mx-auto">
 		<div class="card mt-3 bg-light">
-		<form method="POST" action="GuideSignUp.php" enctype="multipart/form-data">
+		<form method="POST" enctype="multipart/form-data">
 		  <div class="card-header text-center">
 		    <h4><strong> Guide SignUp </strong></h4>
 		  </div>
@@ -107,7 +107,7 @@
 	            </div>
 	            <div class="md-form form-sm mb-4 float-right col-md-6">
 	                <i class="fa fa-credit-card prefix"></i>
-	                <input type="number" id="aadhar" class="form-control form-control-sm validate" name="aadhar" required>
+	                <input type="number" id="aadhar" class="form-control form-control-sm validate" name="aadhar" required length=12>
 	                <label data-error="wrong" data-success="right" for="aadhar" style="margin-left: 3.1rem;">Enter Aadhar</label>
 	            </div>
 	        </div>
@@ -134,7 +134,7 @@
 	            </div>
 	        </div>
         	<div class="center text-center form-sm mt-1">
-                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit">SignUp</button>
+                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1">SignUp</button>
             </div>
 		</div>
 		</form>
@@ -186,12 +186,20 @@
 			if(mysqli_query($conn,$sql)){
 				echo"Successful";
 			}
-			// $otp = rand(10000000,99999999);
-			// $to      = 'akshaykotak2102@gmail.com';
-			// $subject = 'Tourista Email Verification';
-			// $message = "Your otp - ".$otp."\n"."Use it and verify yourself or else just get lost"."\n\n\n\n\n"."Regards,\nTourista.";
-			// $headers = 'From: hardik.pr@somaiya.edu';
-			// mail($to, $subject, $message, $headers);
+
+			$otp = rand(10000000,99999999);
+			// $to = 'akshay.kotak@somaiya.edu';
+			$subject = 'Tourista Email Verification';
+			$message = "Dear ".$name.", Your otp - ".$otp."\n"."Use it and verify yourself or else just get lost"."\n\n\n\n\n"."Regards,\nTourista.";
+			$headers = 'From: Akshay Kotak<akshaykotak2102@gmail.com>';
+			mail($email, $subject, $message, $headers);
+
+			echo "<script>
+			         $(window).load(function(){
+			             $('#exampleModalCenter').modal('show');
+			         });
+			    </script>";
+
 		}
 
 	?>
@@ -203,5 +211,12 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+
+	<script type="text/javascript">
+		$('form').on('submit',function(){
+			$('.modal').show();
+		});
+	</script>
+
 </body>
 </html>
