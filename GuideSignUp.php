@@ -62,9 +62,6 @@
 					<li class="nav-item nav-prod">
 						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
-					<li>
-						<a href="#OTPMODAL" data-toggle="modal" style="visibility: hidden;" id="MODAL"></a>
-					</li>
 				</ul>
 			</div>
 		</div>
@@ -72,7 +69,7 @@
 
 	<div class="col-11 mx-auto">
 		<div class="card mt-3 bg-light">
-		<form method="POST" enctype="multipart/form-data">
+		<form method="POST" enctype="multipart/form-data" action="OTP.php">
 		  <div class="card-header text-center">
 		    <h4><strong> Guide SignUp </strong></h4>
 		  </div>
@@ -86,7 +83,7 @@
 		  			</div>
 		  			<div>
 		  				<!-- <button class="btn btn-secondary" onclick="document.getElementById('imageUpload').click(); return false;">Upload Photo</button> -->
-		  				<input type="file" name="profilepic" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg"/>
+		  				<input type="file" name="profilepic" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg" required="true">
 		  			</div>
 		  		</div>		  		
 		  	</div>
@@ -105,12 +102,12 @@
 	        <div class="row">
 	            <div class="md-form form-sm mb-4 col-md-6">
 	                <i class="fa fa-lock prefix"></i>
-	                <input type="password" id="password" class="form-control form-control-sm validate" name="password" required>
+	                <input type="password" id="password" class="form-control form-control-sm validate" name="password" required minlength="6">
 	                <label data-error="wrong" data-success="right" for="password" style="margin-left: 3.1rem;">Enter Password</label>
 	            </div>
 	            <div class="md-form form-sm mb-4 float-right col-md-6">
 	                <i class="fa fa-credit-card prefix"></i>
-	                <input type="number" id="aadhar" class="form-control form-control-sm validate" name="aadhar" required length=12>
+	                <input type="tel" id="aadhar" class="form-control form-control-sm validate" name="aadhar" required minlength="12" maxlength="12">
 	                <label data-error="wrong" data-success="right" for="aadhar" style="margin-left: 3.1rem;">Enter Aadhar</label>
 	            </div>
 	        </div>
@@ -123,7 +120,7 @@
             	<div class="md-form form-sm mb-4 col-md-6">
 	            	<!-- Default switch -->
 					<label class="bs-switch ml-3">
-					  <input type="checkbox">
+					  <input type="checkbox" name="avail">
 					  <span class="slider round"></span>
 					</label>  
 	            	<label class="prefix mt-1" style="margin-left: 5.1rem">Availability</label>  
@@ -136,71 +133,16 @@
 	                <label data-error="wrong" data-success="right" for="mobile" style="margin-left: 3.1rem;">Enter Mobile Number</label>
 	            </div>
 	        </div>
+	        <div>
+	        	<input type="hidden" name="oldotp" value="<?php echo rand(10000000,99999999); ?>">
+	        </div>
         	<div class="center text-center form-sm mt-1">
-                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1" onclick="document.getElementById('MODAL').click();">SignUp</button>
+                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1">SignUp</button>
             </div>
 		</div>
 		</form>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="OTPMODAL" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	  <div class="modal-dialog modal-dialog-centered" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLongTitle">Email Verification</h5>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-	      <div class="modal-body">
-            <input type="number" id="otp" class="form-control form-control-sm validate" name="id" required>
-            <label data-error="wrong" data-success="right" for="otp">Enter OTP</label>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2">Submit</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-
-
-	<?php
-		if(isset($_POST['submit'])){
-
-			$conn = mysqli_connect("localhost","root","","Tourista");
-
-			$target = "Guide/".basename($_FILES['profilepic']['name']);
-			move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
-			
-			$name = $_POST['name'];
-			$email = $_POST['id'];
-			$password = $_POST['password'];
-			$aadhar = $_POST['aadhar'];
-			$profilepic = $_FILES['profilepic']['name'];
-
-			$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic','False','Goa','1')";
-
-			if(mysqli_query($conn,$sql)){
-				echo"Successful";
-			}
-
-			$otp = rand(10000000,99999999);
-			// $to = 'akshay.kotak@somaiya.edu';
-			$subject = 'Tourista Email Verification';
-			$message = "Dear ".$name.", Your otp - ".$otp."\n"."Use it and verify yourself or else just get lost"."\n\n\n\n\n"."Regards,\nTourista.";
-			$headers = 'From: Akshay Kotak<akshaykotak2102@gmail.com>';
-			mail($email, $subject, $message, $headers);
-
-			// echo "<script>
-			//          $(window).load(function(){
-			//              $('#exampleModalCenter').modal('show');
-			//          });
-			//     </script>";
-
-		}
-
-	?>
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap tooltips -->
