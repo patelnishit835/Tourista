@@ -318,7 +318,7 @@
 							<!-- Text -->
 							<p class='card-text' style='color:black;text-align:left;'>$line[0]</p>
 							<!-- Link --> 
-							<a href='Places.php?place=$name' class='black-text d-flex justify-content-end' type='hidden'><h5>Know more <i class='fa fa-angle-double-right'></i></h5></a>
+							<a href='Hotel.php?hotel=$name' class='black-text d-flex justify-content-end' type='hidden'><h5>Know more <i class='fa fa-angle-double-right'></i></h5></a>
 
 							</div>
 
