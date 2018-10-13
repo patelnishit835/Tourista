@@ -62,6 +62,9 @@
 					<li class="nav-item nav-prod">
 						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
+					<li>
+						<a href="#OTPMODAL" data-toggle="modal" style="visibility: hidden;" id="MODAL"></a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -134,19 +137,14 @@
 	            </div>
 	        </div>
         	<div class="center text-center form-sm mt-1">
-                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1">SignUp</button>
+                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1" onclick="document.getElementById('MODAL').click(); return false;">SignUp</button>
             </div>
 		</div>
 		</form>
 	</div>
 
-		<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-	  Launch demo modal
-	</button>
-
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade" id="OTPMODAL" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -194,11 +192,11 @@
 			$headers = 'From: Akshay Kotak<akshaykotak2102@gmail.com>';
 			mail($email, $subject, $message, $headers);
 
-			echo "<script>
-			         $(window).load(function(){
-			             $('#exampleModalCenter').modal('show');
-			         });
-			    </script>";
+			// echo "<script>
+			//          $(window).load(function(){
+			//              $('#exampleModalCenter').modal('show');
+			//          });
+			//     </script>";
 
 		}
 
