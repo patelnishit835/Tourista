@@ -137,7 +137,7 @@
 	            </div>
 	        </div>
         	<div class="center text-center form-sm mt-1">
-                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1" onclick="document.getElementById('MODAL').click(); return false;">SignUp</button>
+                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1" onclick="document.getElementById('MODAL').click();">SignUp</button>
             </div>
 		</div>
 		</form>
@@ -179,7 +179,7 @@
 			$aadhar = $_POST['aadhar'];
 			$profilepic = $_FILES['profilepic']['name'];
 
-			$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic','True','Goa','1')";
+			$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic','False','Goa','1')";
 
 			if(mysqli_query($conn,$sql)){
 				echo"Successful";
@@ -209,12 +209,6 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
-
-	<script type="text/javascript">
-		$('form').on('submit',function(){
-			$('.modal').show();
-		});
-	</script>
 
 </body>
 </html>
