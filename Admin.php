@@ -115,8 +115,8 @@
 			                        <label data-error="wrong" data-success="right" for="Input5">Location</label>
 			                    </div>
 			                    <div class="md-form form-sm mb-2">
-			                        <input type="number" id="Input5" class="form-control form-control-sm validate" name="hotellocationid" required>
-			                        <label data-error="wrong" data-success="right" for="Input5">Location ID</label>
+			                        <input type="number" id="Input6" class="form-control form-control-sm validate" name="hotellocationid" required>
+			                        <label data-error="wrong" data-success="right" for="Input6">Location ID</label>
 			                    </div>
 			                    <!-- <div class="input-group mb-2">
 			                      <div class="input-group-prepend">
