@@ -73,6 +73,7 @@
 				$name = $_POST['name'];
 				$email = $_POST['id'];
 				$otp = $_POST['oldotp'];
+
 				$target = "Guide/".basename($_FILES['profilepic']['name']);
 				move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
 				$_POST['profilepic'] = $_FILES['profilepic']['name'];
@@ -99,9 +100,14 @@
 					$profilepic = $_POST['profilepic'];
 					$place_of_work = $_POST['work'];
 					$availability = $_POST['avail'];
+					$mobile = $_POST['mobile'];
 
-					$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic',true,'$place_of_work','1')";
-
+					$sql = "SELECT PlaceID FROM Place WHERE Name = '$place_of_work'";
+					$result = mysqli_query($conn,$sql);
+					$row = mysqli_fetch_assoc($result);
+					$placeid = $row['PlaceID'];
+					$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic',true,'$place_of_work','$placeid','$mobile')";
+					
 					if(mysqli_query($conn,$sql)){
 						// echo"Successful";
 					}
