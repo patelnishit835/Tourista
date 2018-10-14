@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
 	<!-- Bootstrap core CSS -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -120,9 +120,9 @@
          						<img src = '$img' id='placeimage' class='img-fluid float-img' style='float:left;width:40%;' align = 'left'>
          						<span>$line</span>
          					</div>
-         					<div id='myModal' class='modal'>
-							  <span class='close'>x</span>
-							  <img class='modal-content' id='img01'>
+         					<div id='myModal' class='modal modalh'>
+							  <span class='close closeh'>x</span>
+							  <img class='modal-content modal-contenth' id='img01'>
 							  <div id='caption'></div>
 							</div>
          				  </html>";
@@ -354,11 +354,105 @@
 	?>
 
      <!--Panel 4-->
-     <div class="tab-pane fade" id="guides" role="tabpanel">
+     <div class="tab-pane fade container" id="guides" role="tabpanel">
          <br>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+
+          <?php
+
+         	if(isset($_GET['place'])){
+         		$place = $_GET['place'];
+         		$conn = mysqli_connect('localhost','root','','Tourista');
+         		$sql = "SELECT PlaceID FROM PLACE WHERE Name = '$place'";
+         		$result = mysqli_query($conn,$sql);
+         		$row = mysqli_fetch_assoc($result);
+         		$pid = $row['PlaceID'];
+         		$sql = "SELECT GuideID, Name, EmailID, ProfilePic, Availability, Place_of_Work FROM Guide WHERE PlaceID = '$pid'";
+         		if($result=mysqli_query($conn,$sql)){
+         			echo "<html>
+						  <head>
+							<style type='text/css'>
+								@media (min-width: 576px) {
+								    .card-columns {
+								        column-count: 1;
+								    }
+								}
+
+								@media (min-width: 768px) {
+								    .card-columns {
+								        column-count: 3;
+								    }
+								}
+
+								@media (min-width: 992px) {
+								    .card-columns {
+								        column-count: 3;
+								    }
+								}
+
+								@media (min-width: 1200px) {
+								    .card-columns {
+								        column-count: 3;
+								    }
+								}
+
+							</style>
+						</head>
+						<body>
+						<div class='row'>
+						<div class='card-columns'>
+						";
+
+						$count=0;
+
+						while($row=mysqli_fetch_assoc($result)){
+							$name = $row['Name'];
+							$img = $row['ProfilePic'];
+							$email = $row['EmailID'];
+							$id = $row['GuideID'];
+							$count++;
+							$line = '';
+
+							echo "
+							<div class='card'>
+
+							<!-- Card image -->
+							<div class='view overlay'>
+							<img class='card-img-top' src='$img'>
+							<a>
+							  <div class='mask rgba-white-slight'></div>
+							</a>
+							</div>
+
+							<!-- Card content -->
+							<div class='card-body'>
+
+							<!-- Title -->
+							<h4 class='card-title' style='text-align:left;color:black;'>$name</h4>
+							<hr>
+							<!-- Link --> 
+							<a href='GuideDetails.php?id=$id' class='black-text d-flex justify-content-end' type='hidden'><h5>Rate</h5></a>
+							</div>
+
+							</div>
+							";
+
+							if($count%3==0){
+								echo "</div></div>
+									  <div class='row'>
+									  <div class='card-columns'>";
+							}
+
+						}
+						echo "</div></div></body></html>";
+         		   }
+         		   	else{
+						mysqli_error($conn);
+					}
+         		}
+         	
+         	?>	 
+
+
      </div>
      <!--/.Panel 4-->
  </div>
