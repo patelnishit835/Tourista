@@ -469,6 +469,7 @@
 					Availability BOOLEAN NOT NULL,
 					Place_of_Work VARCHAR(50) NOT NULL,
 					PlaceID INTEGER NOT NULL,
+					Mobile_No VARCHAR(10) NOT NULL,
 					FOREIGN KEY(PlaceID) REFERENCES Place(PlaceID),
 					PRIMARY KEY(GuideID)
 				);";
