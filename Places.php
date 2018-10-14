@@ -430,7 +430,7 @@
 							<h4 class='card-title' style='text-align:left;color:black;'>$name</h4>
 							<hr>
 							<!-- Link --> 
-							<a href='GuideDetails.php?id=$id' class='black-text d-flex justify-content-end' type='hidden'><h5>Rate</h5></a>
+							<a href='GuideUserProfile.php?id=$id' class='black-text d-flex justify-content-end' type='hidden'><h5>Rate</h5></a>
 							</div>
 
 							</div>
@@ -458,7 +458,8 @@
  </div>
 
 <br><br><br>
- 		<!-- Footer -->
+ 		
+ 	<!-- Footer -->
   <footer class="page-footer font-small" style="background-color: rgba(32,32,32,1)">
 
     <!-- Footer Elements -->
