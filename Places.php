@@ -279,7 +279,7 @@
      <li class="nav-item" id="navhotel">
          <a class="nav-link" data-toggle="tab" href="#hotels" role="tab"><i class="fa fa-hotel"></i> Hotels</a>
      </li>
-     <li class="nav-item">
+     <li class="nav-item" id="navguide">
          <a class="nav-link" data-toggle="tab" href="#guides" role="tab"><i class="fa fa-users"></i> Guides</a>
      </li>
  </ul>
@@ -535,14 +535,6 @@
      </div>
      <!--/.Panel 3-->
 
-    <?php
-		// if(!isset($_SESSION['login_user'])){
-		// 	echo "<script>
-		// 			var h = document.getElementById('navhotel');
-		// 			h.style.display = 'none';
-	 //          	  </script>";
-		// }		
-	?>
 
      <!--Panel 4-->
      <div class="tab-pane fade container" id="guides" role="tabpanel">
@@ -647,6 +639,27 @@
      </div>
      <!--/.Panel 4-->
  </div>
+
+     <?php
+		if(!isset($_SESSION['login_user'])){
+			echo "<script>
+					var h = document.getElementById('navhotel');
+					h.style.display = 'none';
+
+					var g = document.getElementById('navguide');
+					g.style.display = 'none';
+	          	  </script>";
+		}
+		if(isset($_SESSION['guide_user_signup'])){
+				echo "<script>
+					var h = document.getElementById('navhotel');
+					h.style.display = 'none';
+
+					var g = document.getElementById('navguide');
+					g.style.display = 'none';
+	          	  </script>";
+		}		
+	?>
 
 <br><br><br>
  		
