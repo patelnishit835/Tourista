@@ -56,14 +56,14 @@
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
 					</div>
-					<li class="nav-item nav-prod">
+					<li class="nav-item nav-prod" id="guide">
 						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
-					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
+					<li class="nav-item nav-prod" id="log">
+						<a class="nav-link" data-toggle="modal" href="#modalLRForm">LOGIN/SIGN UP</a>
 					</li>
-					<li class="nav-item nav-prod">
-						<a class="nav-link" href="Logout.php" id="logout">Logout</a>
+					<li class="nav-item nav-prod" id="logout">
+						<a class="nav-link" href="Logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -176,6 +176,46 @@
 					else{
 						mysqli_error($conn);
 					}
+
+					if(isset($_SESSION['login_user'])) {
+
+						$name = $_SESSION['login_user'];
+
+						echo "<script>
+
+									var s = document.getElementById('guide');
+									s.innerHTML = '';
+									s.style.visibility = 'hidden';
+
+									var g = document.getElementById('log');
+									g.innerHTML = $name;
+									g.style.visibility = 'visible'; 
+
+							  </script>";
+					}
+					else {
+						echo "<script>
+									var g = document.getElementById('logout');
+									g.innerHTML = '';
+									g.style.visibility = 'hidden';
+							  </script>";
+					}
+
+					if(isset($_SESSION['guide_user_signup'])) {
+
+						$name = $_SESSION['guide_user_signup'];
+						echo "<script>
+
+									var g = document.getElementById('log');
+									g.innerHTML = $name;
+									g.style.visibility = 'visible'; 
+
+									var s = document.getElementById('logout');
+									s.innerHTML = 'Logout';
+									s.style.visibility = 'visible';
+
+							  </script>";
+					}
 				?>
 			</div>
 
@@ -242,16 +282,7 @@
 		  </footer>
 		  <!-- Footer -->
 
-	<!-- JQuery -->
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	Bootstrap tooltips -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-	<!-- Bootstrap core JavaScript -->
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
-	<!-- MDB core JavaScript -->
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script> -->
-	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
-	<!-- <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script> -->  
 	
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

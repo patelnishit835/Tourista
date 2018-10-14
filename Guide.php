@@ -11,7 +11,6 @@ session_start();
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
 
  	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,6 +25,8 @@ session_start();
 
 </head>
 <body class="black-skin">
+
+	<!-- --------------------------NAVBAR--------------------------------- -->
 
 	<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: rgba(32,32,32,0.75)" id="navbar">
 		<div class="container-fluid">
@@ -46,65 +47,32 @@ session_start();
 					<li class="nav-item nav-prod">
 						<a class="nav-link" data-toggle="modal" href="#signin" id="log">LOGIN</a>
 					</li>
-					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#signup" id="up">SIGN UP</a>
+					<li class="nav-item nav-prod" id="signup">
+						<a class="nav-link" href="GuideSignUp.php" id="up">SIGN UP</a>
+					</li>
+					<li class="nav-item nav-prod" id="profile">
+						<a class="nav-link" href="GuideUserProfile.php">Profile</a>
+					</li>
+					<li class="nav-item nav-prod" id="logout">
+						<a class="nav-link" href="Logout.php" id="up">Logout</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+
+	<!-- ---------------------------------LOGIN------------------------------- -->
+
 	<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content cascading-modal" role="document">
 	  	        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-					<form action="GuideUserProfile.php" method="POST">
+					<form action="Guide.php" method="POST">
 						<div class="modal-body mb-1">
 				            <div class="md-form form-sm mb-5">
 				                <i class="fa fa-envelope prefix"></i>
-				                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="email2" required>
+				                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="id" required>
 				                <label data-error="wrong" data-success="right" for="modalLRInput13">Email</label>
-				            </div>
-
-				            <div class="md-form form-sm mb-5">
-				                <i class="fa fa-lock prefix"></i>
-				                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass2">
-				                <label data-error="wrong" data-success="right" for="modalLRInput15">Password</label>
-				            </div>
-
-				            <div class="text-center form-sm mt-2">
-					            <button class="btn btn-info btn-outline-black lighten-1 waves-effect ml-auto" type="submit" name="submit">SignIn</button>
-					        </div>
-			            </div>
-			            <div class="modal-footer">    
-				       		<button type="button" class="btn btn-outline-black waves-effect ml-auto" data-dismiss="modal">Close</button>
-				        </div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content cascading-modal" role="document">
-	  	        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-					<form action="GuideUserProfile.php" method="POST">
-						<div class="modal-body mb-1">
-				        	<div class="md-form form-sm mb-5">
-				                <i class="fa fa-user prefix"></i>
-				                <input type="text" id="modalLRInput12" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
-				                <label data-error="wrong" data-success="right" for="modalLRInput12">Name</label>
-				            </div>
-
-				            <div class="md-form form-sm mb-5">
-				                <i class="fa fa-envelope prefix"></i>
-				                <input type="email" id="modalLRInput13" class="form-control form-control-sm validate" name="email" required>
-				                <label data-error="wrong" data-success="right" for="modalLRInput13">Email</label>
-				            </div>
-
-				            <div class="md-form form-sm mb-5">
-				                <i class="fa fa-phone prefix"></i>
-				                <input type="text" id="modalLRInput14" class="form-control form-control-sm validate" pattern="[0-9]{10}" name="mobile" required>
-				                <label data-error="wrong" data-success="right" for="modalLRInput14">Phone Number</label>
 				            </div>
 
 				            <div class="md-form form-sm mb-5">
@@ -113,13 +81,8 @@ session_start();
 				                <label data-error="wrong" data-success="right" for="modalLRInput15">Password</label>
 				            </div>
 
-				           	<div class="md-form form-sm mb-5">
-				                <i class="fa fa-address-card prefix"></i>
-				                <input type="text" id="modalLRInput16" class="form-control form-control-sm validate" size="12" required="true" name="aadhar">
-				                <label data-error="wrong" data-success="right" for="modalLRInput16">Aadhar Number</label>
-				            </div>
 				            <div class="text-center form-sm mt-2">
-					            <button class="btn btn-info btn-outline-black lighten-1 waves-effect ml-auto" type="submit" name="submit2">Sign Up</button>
+					            <button class="btn btn-info btn-outline-black lighten-1 waves-effect ml-auto" type="submit" name="login">Log In</button>
 					        </div>
 			            </div>
 			            <div class="modal-footer">    
@@ -130,6 +93,8 @@ session_start();
 			</div>
 		</div>
 	</div>
+
+
 
 	<!--Carousel Wrapper-->
 	<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -256,7 +221,7 @@ session_start();
 	<div class="joinus">
 		<h2 align="center">Join Tourista Now for an Amazing career!</h2>
 		<div align="center">
-			<button class="btn col-md-4 danger-color-dark" data-toggle="modal" href="#signup">Join Us!</button>
+			<button class="btn col-md-4 danger-color-dark join" name="join" value="sign" >Join Us!</button>
 		</div>
 	</div>
 
@@ -326,6 +291,17 @@ session_start();
 	<!-- PHP CODE -->
 	<?php
 
+		$conn = mysqli_connect("localhost","root","");
+
+		$sql_create = "CREATE DATABASE IF NOT EXISTS Tourista";
+
+		if(mysqli_query($conn,$sql_create)){
+			$conn = mysqli_connect("localhost","root","","Tourista");
+		}
+		else {
+			echo mysqli_error($conn);
+		}
+
 		if(isset($_SESSION['guide_user_signup']))
 		{
 			$name = $_SESSION['guide_user_signup'];
@@ -345,11 +321,61 @@ session_start();
 		  </script>";
 		}
 
-	?>
+		/*-------------------------LOGIN AUTHENTICATION------------------------*/
 
-	<script>
-		
-	</script>
+		if(isset($_POST['login'])) {
+			$id = $_POST['id'];
+			$pass = $_POST['pass'];
+			$count = 0;
+
+			$sql = "SELECT Password,EmailID
+					FROM Guide
+					WHERE EmailID = '$id' AND Password = '$pass'";
+
+			$result = mysqli_query($conn, $sql);
+			$count = mysqli_num_rows($result);
+
+			if($count == 0) {
+				echo "Invalid username or password....";
+			}
+			else {
+				$query = "SELECT Name
+						 FROM Guide
+						 WHERE EmailID = '$id' AND Password = '$pass' limit 1";
+
+				$name = mysqli_fetch_array(mysqli_query($conn, $query));
+
+				$_SESSION['guide_user_signup']=$name[0];
+				  echo "<script>
+						var l = document.getElementById('log');
+						l.innerHTML = '$name[0]';
+						l.href = '#';
+
+						var s = document.getElementById('signup');
+						s.innerHTML = '';
+						s.style.visibility = 'hidden';
+					  	</script>";
+			}
+		}
+		else {
+					echo mysqli_error($conn);
+					
+				}
+
+		if(!isset($_SESSION['guide_user_signup'])) {
+
+			echo "<script>
+					var l =document.getElementById('logout');
+					l.innerHTML = '';
+					l.style.visibility = 'hidden';
+
+					var p = document.getElementById('profile');
+					p.innerHTML = '';
+					p.style.visibility = 'hidden';
+				</script>";
+		}
+
+	?>
 
 
 	<!-- JQuery -->
@@ -360,6 +386,12 @@ session_start();
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).on('click', '.join', function() {
+			window.location = 'GuideSignUp.php';
+		});
+	</script>
 	
 </body>
 </html>

@@ -80,10 +80,13 @@
 
 	    .autocomplete {
 	    	background-color: white;
-	    	width: 70%;
+	    	width: 75%;
 	    	color: black;
 	    	text-align: left;
 	    	align-self: center;
+	    	margin: auto;
+	    	border-radius: 30px 30px 30px 30px;
+	    	color: black;
 	    }
 
 
