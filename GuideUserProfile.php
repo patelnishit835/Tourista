@@ -99,6 +99,9 @@ session_start();
 				$place_of_work = $row['Place_of_Work'];
 				$availability = $row['Availability'];
 				$image = $row['ProfilePic'];
+				$mobile = $row['Mobile_No'];
+				$pass = $row['Password'];
+				$adhaar = $row['Aadhaar'];
 			}
 	?>
 
@@ -114,7 +117,7 @@ session_start();
 						<span><b>Name</b><br><?php echo $name;?></span>
 						<br><br>
 						<i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-						<span><b>Phone</b><br>+91 9033367574</span>
+						<span><b>Phone</b><br><?php echo $mobile;?></span>
 						<br><br>
 						<i class="fa fa-envelope fa-2x wow fadeInUp" data-wow-delay="0.7s" aria-hidden="true"></i>
 						<span><b>Email</b><br><?php echo $email;?></span>
@@ -147,8 +150,96 @@ session_start();
 	<?php
 		}
 		else if(isset($_SESSION['guide_user_signup'])){
+			$id = $_GET['id'];
+			$conn = mysqli_connect("localhost","root","","Tourista");
+			$sql = "SELECT * FROM Guide WHERE GuideID = '$id'";
+			$result = mysqli_query($conn,$sql);
+			while($row = mysqli_fetch_assoc($result)){
+				$name = $row['Name'];
+				$email = $row['EmailID'];
+				$place_of_work = $row['Place_of_Work'];
+				$availability = $row['Availability'];
+				$image = $row['ProfilePic'];
+				$mobile = $row['Mobile_No'];
+				$pass = $row['Password'];
+				$adhaar = $row['Aadhaar'];
+			}
+
 			?>
 
+			<div class="col-11 mx-auto">
+			<div class="card mt-3 bg-light">
+			<form method="POST" enctype="multipart/form-data" action="GuideUserProfile.php">
+			  <div class="card-header text-center">
+			    <h4><strong> Guide Details </strong></h4>
+			  </div>
+			  <div class="card-body">
+			  	<div class="row">
+			  		<div class="container">
+			  			<div>
+			  				<a onclick="document.getElementById('imageUpload').click(); return false;">
+			  					<img id="userimg" class="user hoverable" src="<?php echo $image?>">
+			  				</a>
+			  			</div>
+			  			<div>
+			  				<!-- <button class="btn btn-secondary" onclick="document.getElementById('imageUpload').click(); return false;">Upload Photo</button> -->
+			  				<input type="file" name="profilepic" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg" required="true">
+			  			</div>
+			  		</div>		  		
+			  	</div>
+			  	<div class="row">	
+		            <div class="md-form form-sm mb-4 col-md-6">
+		                <i class="fa fa-user prefix"></i>
+		                <input type="text" id="name" class="form-control form-control-sm validate" name="name" readonly="true" value="<?php echo $name;?>">
+		                <label data-error="wrong" data-success="right" for="name" style="margin-left: 3.1rem;">Name</label>
+		            </div>
+			  		<div class="md-form form-sm mb-4 float-right col-md-6">
+		                <i class="fa fa-envelope prefix"></i>
+		                <input type="email" id="email" class="form-control form-control-sm validate" name="id" readonly="true" value="<?php echo $email;?>">
+		                <label data-error="wrong" data-success="right" for="email" style="margin-left: 3.1rem;">Email</label>
+		            </div>
+		        </div>
+		        <div class="row">
+		            <div class="md-form form-sm mb-4 col-md-6">
+		                <i class="fa fa-lock prefix"></i>
+		                <input type="password" id="password" class="form-control form-control-sm validate" name="password" readonly="true" minlength="6" value="
+		                <?php echo $pass;?>">
+		                <label data-error="wrong" data-success="right" for="password" style="margin-left: 3.1rem;">Password</label>
+		            </div>
+		            <div class="md-form form-sm mb-4 float-right col-md-6">
+		                <i class="fa fa-credit-card prefix"></i>
+		                <input type="tel" id="aadhar" class="form-control form-control-sm validate" name="aadhar" readonly="true" minlength="12" maxlength="12" value="<?php echo $aadhar;?>">
+		                <label data-error="wrong" data-success="right" for="aadhar" style="margin-left: 3.1rem;">Aadhar</label>
+		            </div>
+		        </div>
+		        <div class="row">
+		            <div class="md-form form-sm mb-2 float-right col-md-6">
+		                <i class="fa fa-map-marker prefix"></i>
+		                <input type="text" id="work" class="form-control form-control-sm validate" name="work" readonly="true" value="<?php echo $place_of_work;?>">
+		                <label data-error="wrong" data-success="right" for="work" style="margin-left: 3.1rem;">Place of Work</label>
+		            </div>
+	            	<div class="md-form form-sm mb-4 col-md-6">
+		            	<!-- Default switch -->
+						<label class="bs-switch ml-3">
+						  <input type="checkbox" name="avail">
+						  <span class="slider round"></span>
+						</label>  
+		            	<label class="prefix mt-1" style="margin-left: 5.1rem">Availability</label>  
+		            </div>	        	
+			  </div>
+			  <div class="row">
+		            <div class="md-form form-sm mb-2 col-md-6">
+		                <i class="fa fa-phone prefix"></i>
+		                <input type="number" id="mobile" class="form-control form-control-sm validate" name="mobile" readonly="true" value="<?php echo $mobile?>">
+		                <label data-error="wrong" data-success="right" for="mobile" style="margin-left: 3.1rem;">Mobile Number</label>
+		            </div>
+		        </div>
+	        	<div class="center text-center form-sm mt-1">
+	                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1">SignUp</button>
+	            </div>
+			</div>
+			</form>
+		</div>
 
 	<?php
 		}
