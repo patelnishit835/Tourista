@@ -59,8 +59,8 @@
 					<li class="nav-item nav-prod" id="guide">
 						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
-					<li class="nav-item nav-prod" id="log">
-						<a class="nav-link" data-toggle="modal" href="#modalLRForm">LOGIN/SIGN UP</a>
+					<li class="nav-item nav-prod">
+						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
 					</li>
 					<li class="nav-item nav-prod" id="logout">
 						<a class="nav-link" href="Logout.php">Logout</a>
@@ -77,15 +77,6 @@
 			<div class="container">
 
 				<?php
-
-					if(isset($_SESSION['login_user'])){
-							$s=$_SESSION['login_user'];
-							echo "<script>
-							var l = document.getElementById('log');
-							l.innerHTML = '$s';
-							l.href = '#';
-						  	</script>";
-					}
 
 					$c = $_GET['category'];
 					$conn = mysqli_connect('localhost','root','','Tourista');
@@ -183,13 +174,13 @@
 
 						echo "<script>
 
+									var l = document.getElementById('log');
+									l.innerHTML = '$name';
+									l.href = '#';
+
 									var s = document.getElementById('guide');
 									s.innerHTML = '';
 									s.style.visibility = 'hidden';
-
-									var g = document.getElementById('log');
-									g.innerHTML = $name;
-									g.style.visibility = 'visible'; 
 
 							  </script>";
 					}

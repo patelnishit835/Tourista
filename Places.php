@@ -49,7 +49,7 @@
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
 					</div>
-					<li class="nav-item nav-prod">
+					<li class="nav-item nav-prod" id="guide">
 						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
 					<li class="nav-item nav-prod">
@@ -62,18 +62,209 @@
 			</div>
 		</div>
 	</nav>
+
+	<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog cascading-modal" role="document">
+	        <!--Content-->
+	        <div class="modal-content">
+
+	            <!--Modal cascading tabs-->
+	            <div class="modal-c-tabs">
+
+	                <!-- Nav tabs -->
+	                <ul class="nav nav-tabs tabs-2 black lighten-2" role="tablist">
+	                    <li class="nav-item">
+	                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
+	                    </li>
+	                    <li class="nav-item">
+	                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+	                    </li>
+	                </ul>
+
+	                <!-- Tab panels -->
+	                <div class="tab-content">
+	                    <!--Panel 7-->
+	                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+	                        <!--Body-->
+	                        <div class="modal-body mb-1">
+	                        	<form action="Places.php?place=<?php echo $_GET['place']?>" method="POST">
+	                            <div class="md-form form-sm mb-5">
+	                                <i class="fa fa-envelope prefix"></i>
+	                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate" required name="id">
+	                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Email</label>
+	                            </div>
+
+	                            <div class="md-form form-sm mb-4">
+	                                <i class="fa fa-lock prefix"></i>
+	                                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
+	                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your Password</label>
+	                            </div>
+	                            <div class="text-center mt-2">
+	                                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="login">Log in</button>
+	                            </div>
+	                        	</form>
+	                        </div>
+	                        <!--Footer-->
+	                        <div class="modal-footer">
+	                            <div class="options text-center text-md-right mt-1">
+	                                <p><a href="#" class="black-text">Forgot Password?</a></p>
+	                            </div>
+	                            <button type="button" class="btn btn-outline-black waves-effect ml-auto" data-dismiss="modal">Close</button>
+	                        </div>
+
+	                    </div>
+	                    <!--/.Panel 7-->
+
+	                    <!--Panel 8-->
+	                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+	                        <!--Body-->
+	                        <div class="modal-body">
+	                        	<form action="Places.php?place=<?php echo $_GET['place']?>" method="POST">
+	                        	<div class="md-form form-sm mb-5">
+	                                <i class="fa fa-user prefix"></i>
+	                                <input type="text" id="modalLRInput12" class="form-control form-control-sm validate" pattern="[A-Za-z\s]+" name="name" required>
+	                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your Name</label>
+	                            </div>
+
+	                            <div class="md-form form-sm mb-5">
+	                                <i class="fa fa-phone prefix"></i>
+	                                <input type="text" id="modalLRInput13" class="form-control form-control-sm validate" pattern="[0-9]{10}" name="mobile" required>
+	                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your Phone Number</label>
+	                            </div>
+
+	                            <div class="md-form form-sm mb-5">
+	                                <i class="fa fa-envelope prefix"></i>
+	                                <input type="email" id="modalLRInput14" class="form-control form-control-sm validate" name="email" required>
+	                                <label data-error="wrong" data-success="right" for="modalLRInput14">Your Email</label>
+	                            </div>
+
+	                            <div class="md-form form-sm mb-5">
+	                                <i class="fa fa-lock prefix"></i>
+	                                <input type="password" id="modalLRInput15" class="form-control form-control-sm validate" minlength="6" required="true" name="pass">
+	                                <label data-error="wrong" data-success="right" for="modalLRInput15">Your Password</label>
+	                            </div>
+
+	                            <div class="text-center form-sm mt-2">
+	                                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit">Sign Up </button>
+	                            </div>
+	                            </form>
+	                        </div>
+	                        <!--Footer-->
+	                        <div class="modal-footer">
+	                            <button type="button" class="btn btn-outline-black waves-effect ml-auto" data-dismiss="modal">Close</button>
+	                        </div>
+	                    </div>
+	                    <!--/.Panel 8-->
+	                </div>
+	            </div>
+	        </div>
+	        <!--/.Content-->
+	    </div>
+	</div>
 	<br><br><br>
 
 		<?php
-			if(isset($_SESSION['login_user'])){
+
+		if(isset($_SESSION['login_user'])){
 
 				$s=$_SESSION['login_user'];
 				  echo "<script>
 						var l = document.getElementById('log');
 						l.innerHTML = '$s';
 						l.href = '#';
+
+						var g = document.getElementById('guide');
+						g.innerHTML = '';
+						g.style.visibility = 'hidden';
+
+					  	</script>";
+		}
+
+		$conn = mysqli_connect("localhost","root","","Tourista");
+		if(isset($_POST['submit'])){
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$mobile = $_POST['mobile'];
+			$pass = $_POST['pass'];
+				$sql = "INSERT INTO User VALUES('$name','','$email','$mobile','$pass');";
+				if(mysqli_query($conn,$sql)) {
+					//echo "Table created successfully!!!"
+					$_SESSION['login_user']=$name;
+					  echo "<script>
+							var l = document.getElementById('log');
+							l.innerHTML = '$name';
+							l.href = '#';
+
+							var g = document.getElementById('guide');
+							g.innerHTML = '';
+							g.style.visibility = 'hidden';
+
+						  	</script>";
+				}
+				else {
+					echo mysqli_error($conn);
+					
+				}
+			}
+
+			if(isset($_POST['login'])) {
+			$id = $_POST['id'];
+			$pass = $_POST['pass'];
+			$count = 0;
+
+			$sql = "SELECT Password,EmailID
+					FROM User
+					WHERE EmailID = '$id' AND Password = '$pass'";
+
+			$result = mysqli_query($conn, $sql);
+			$count = mysqli_num_rows($result);
+
+			if($count == 0) {
+				echo "Invalid username or password....";
+			}
+			else {
+				$query = "SELECT Name
+						 FROM User
+						 WHERE EmailID = '$id' AND Password = '$pass' limit 1";
+
+				$name = mysqli_fetch_array(mysqli_query($conn, $query));
+				$_SESSION['login_user']=$name[0];
+				  echo "<script>
+						var l = document.getElementById('log');
+						l.innerHTML = '$name[0]';
+						l.href = '#';
+
+						var g = document.getElementById('guide');
+						g.innerHTML = '';
+						g.style.visibility = 'hidden';
 					  	</script>";
 				}
+			}
+			else {
+					echo mysqli_error($conn);
+						
+					}
+
+			if(isset($_SESSION['login_user'])) {
+
+				echo "<script>
+						var g = document.getElementById('guide');
+						g.innerHTML = '';
+						g.style.visibility = 'hidden';
+					</script>";
+			}
+
+			if(!isset($_SESSION['login_user'])) {
+
+				echo "<script>
+						var g = document.getElementById('logout');
+						g.innerHTML = '';
+						g.style.visibility = 'hidden';
+					</script>";
+			}
+
 
 		?>
 

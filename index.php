@@ -381,6 +381,11 @@
 						var l = document.getElementById('log');
 						l.innerHTML = '$s';
 						l.href = '#';
+
+						var g = document.getElementById('guide');
+						g.innerHTML = '';
+						g.style.visibility = 'hidden';
+
 					  	</script>";
 		}
 
