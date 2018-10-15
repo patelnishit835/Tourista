@@ -56,14 +56,6 @@
             		echo $_FILES['profilepic']['name'];
             	} ?>">
             </div> 
-            <div>
-            	<input type="hidden" name="avail" value="<?php if(isset($_POST['avail'])){
-    				echo "1";
-            	} 
-            	else{
-            		echo "0";
-            	} ?>">
-            </div>
 		</form>
 	</div>
 
@@ -80,8 +72,8 @@
 
 				// $to = 'akshay.kotak@somaiya.edu';
 				$subject = 'Tourista Email Verification';
-				$message = "Dear ".$name.", Your otp - ".$otp."\n"."Use it and verify yourself or else just get lost"."\n\n\n\n\n"."Regards,\nTourista.";
-				$headers = 'From: Akshay Kotak<akshaykotak2102@gmail.com>';
+				$message = "Dear ".$name.", Your otp - ".$otp."\n"."Use it and verify yourself"."\n\n\n\n\n"."Regards,\nTourista.";
+				$headers = 'From: Tourista <touristafuntovisit@gmail.com>';
 				mail($email, $subject, $message, $headers);
 			}
 

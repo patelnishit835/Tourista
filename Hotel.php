@@ -98,33 +98,32 @@
 				<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
 				    <!--Slides-->
 				    <div class="carousel-inner" role="listbox">
-				    	<?php
+<?php
 				    	$name = $_GET['hotel'];
-				    	echo $name;
 				    	$sql = "SELECT Image FROM Hotel WHERE Name = '$name';";
 				    	$result = mysqli_query($conn,$sql);
 				    	$num = mysqli_num_rows($result);
-				    	echo $num;
-				    	$count =0;
+				    	$count = 0;
 				    	while($row=mysqli_fetch_assoc($result))
 				    	{
 				    		$img = $row['Image'];
-				    		echo $img;
 				    		$path = 'Description/Hotels/'.$img;
-				    		echo $path;
 				    		if($count==0){
-				    			echo "<div class='carousel-item' active>";
+				    			echo "<div class='carousel-item active'>";
 				    		}
 				    		else{
 				    			echo "<div class='carousel-item'>";
 				    		}
-				    		echo "<img class='d-block' src='$path' alt='First slide' height='400px'>
-				        			</div>";
+?>
+				    		<img class='d-block' src='<?php echo $path;?>' alt='First slide' height='400px'>
+				        			</div>
+
+<?php
 				        	$count++;
 				    	}
-				    	?>
-<!-- 
-				        <div class="carousel-item active">
+?>
+
+<!-- 				        <div class="carousel-item active">
 				            <img class="d-block" src="Homepage Images/north1.jpg" alt="First slide" height="400px">
 				        </div>
 				        <div class="carousel-item">
