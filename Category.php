@@ -80,7 +80,7 @@
 
 					$c = $_GET['category'];
 					$conn = mysqli_connect('localhost','root','','Tourista');
-					$sql = "SELECT Name,Description,Image FROM Place WHERE Category = '$c'";
+					$sql = "SELECT Name,Description,Image FROM Place WHERE Category = '$c' AND Parent_Place ='NULL';";
 					if($result=mysqli_query($conn,$sql)){
 						echo "<html>
 						<head>

@@ -226,7 +226,7 @@
 				<h1>FAMILY VACATION</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
 				<!-- <form action="Category.php" method="POST"> -->
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="family" name="cat" type="submit">Know More</button>
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="Family Vacation" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
 		</div>
@@ -303,7 +303,7 @@
 				<h1>ROMANCE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
 				<!-- <form action="Category.php" method="POST"> -->
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="romance" name="cat" type="submit">Know More</button>
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="Romantic" name="cat" type="submit">Know More</button>
 				<!-- </form> -->
 			</div>
 		</div>

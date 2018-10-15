@@ -4,40 +4,40 @@ $conn = mysqli_connect("localhost","root","","Tourista");
 
 
 
-// $sql = "INSERT INTO Place VALUES('Gokarna','','Gokarna.jpg','Gokarna.txt','Family Vacation','NULL')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Gokarna Beach','','Gokarna Beach.jpg','Gokarna Beach.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Half Moon','','Half Moon.jpg','Half Moon.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Kudle Beach','','Kudle Beach.jpg','Kudle Beach.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Mahabaleshwar Temple','','Mahabaleshwar Temple.jpg','Mahabaleshwar Temple.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('MahaGanpati Temple','','MahaGanpati Temple.jpg','MahaGanpati Temple.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Murudeshwar Temple','','Murudeshwar Temple.jpg','Murudeshwar Temple.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Om Beach','','Om Beach.jpg','Om Beach.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Paradise Beach','','Paradise Beach.jpg','Paradise Beach.txt','Family Vacation','Gokarna')";
-// mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Gokarna','','Gokarna.jpg','Gokarna.txt','Family Vacation','NULL')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Gokarna Beach','','Gokarna Beach.jpg','Gokarna Beach.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Half Moon','','Half Moon.jpg','Half Moon.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Kudle Beach','','Kudle Beach.jpg','Kudle Beach.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Mahabaleshwar Temple','','Mahabaleshwar Temple.jpg','Mahabaleshwar Temple.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('MahaGanpati Temple','','MahaGanpati Temple.jpg','MahaGanpati Temple.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Murudeshwar Temple','','Murudeshwar Temple.jpg','Murudeshwar Temple.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Om Beach','','Om Beach.jpg','Om Beach.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Paradise Beach','','Paradise Beach.jpg','Paradise Beach.txt','Family Vacation','Gokarna')";
+mysqli_query($conn,$sql);
 
-// $sql = "INSERT INTO Place VALUES('Kullu Manali','','Kullu Manali.jpg','Kullu Manali.txt','Family Vacation','NULL')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Temple of Kullu Valley','','Temple of Kullu Valley.jpg','Temple of Kullu Valley.txt','Family Vacation','Kullu Manali')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Temple of Manali','','Temple of Manali.jpg','Temple of Manali.txt','Family Vacation','Kullu Manali')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Hot Water Spring','','Hot Water Spring.jpg','Hot Water Spring.txt','Family Vacation','Kullu Manali')";
-// mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Kullu Manali','','Kullu Manali.jpg','Kullu Manali.txt','Family Vacation','NULL')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Temple of Kullu Valley','','Temple of Kullu Valley.jpg','Temple of Kullu Valley.txt','Family Vacation','Kullu Manali')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Temple of Manali','','Temple of Manali.jpg','Temple of Manali.txt','Family Vacation','Kullu Manali')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Hot Water Spring','','Hot Water Spring.jpg','Hot Water Spring.txt','Family Vacation','Kullu Manali')";
+mysqli_query($conn,$sql);
 
-// $sql = "INSERT INTO Place VALUES('Malvan','','Malvan.jpg','Malvan.txt','Romantic','NULL')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Tarkarli Beach','','Tarkarli Beach.jpg','Tarkarli Beach.txt','Romantic','Malvan')";
-// mysqli_query($conn,$sql);
-// $sql = "INSERT INTO Place VALUES('Sindhudurg Fort','','Sindhudurg Fort.jpg','Sindhudurg Fort.txt','Romantic','Malvan')";
-// mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Malvan','','Malvan.jpg','Malvan.txt','Romantic','NULL')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Tarkarli Beach','','Tarkarli Beach.jpg','Tarkarli Beach.txt','Romantic','Malvan')";
+mysqli_query($conn,$sql);
+$sql = "INSERT INTO Place VALUES('Sindhudurg Fort','','Sindhudurg Fort.jpg','Sindhudurg Fort.txt','Romantic','Malvan')";
+mysqli_query($conn,$sql);
 
 
 $sql = "SELECT PlaceID FROM Place WHERE Name = 'Gokarna'";

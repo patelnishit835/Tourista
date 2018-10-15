@@ -1,3 +1,21 @@
+<?php
+	session_start();
+  	if(isset($_SESSION['login_user']))
+		{
+		$username=$_SESSION['login_user'];
+		echo   "<script>
+				var l = document.getElementById('log');
+				l.innerHTML = '$username';
+				l.href = '#';
+
+				var g = document.getElementById('guide');
+				g.innerHTML = '';
+				g.style.visibility = 'hidden';
+
+			  	</script>";
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +99,7 @@
 						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
 					</li>
 					<li class="nav-item nav-prod">
-						<a class="nav-link" href="Logout.php" id="logout">Logout</a>
+						<a class="nav-link" href="Logout.php" id="logout">LOGOUT</a>
 					</li>
 				</ul>
 			</div>
@@ -122,19 +140,6 @@
 				        	$count++;
 				    	}
 ?>
-
-<!-- 				        <div class="carousel-item active">
-				            <img class="d-block" src="Homepage Images/north1.jpg" alt="First slide" height="400px">
-				        </div>
-				        <div class="carousel-item">
-				            <img class="d-block" src="Homepage Images/west.jpg" alt="Second slide" height="400px">
-				        </div>
-				        <div class="carousel-item">
-				            <img class="d-block" src="Homepage Images/east.jpg" alt="Third slide" height="400px">
-				        </div>
-				        <div class="carousel-item">
-				            <img class="d-block" src="Homepage Images/south.jpg" alt="Fourth slide" height="400px">
-				        </div> -->
 				    </div>
 				    <!--/.Slides-->
 				    <!--Controls-->
@@ -200,7 +205,14 @@
 						$rating = 1;
 					}
 					if($rating!=0){
-						$sql = "INSERT INTO hRates VALUES()";
+						$sql = "SELECT UserID FROM User WHERE Name = '$username';";
+						$result = mysqli_query($conn,$sql);
+						$userid = mysqli_fetch_array($result);
+						$sql = "SELECT HotelID FROM Hotel WHERE Name = '$name';";
+						$result = mysqli_query($conn,$sql);
+						$hotelid = mysqli_fetch_array($result);
+						$sql = "INSERT INTO hRates VALUES('$userid[0]','$hotelid[0]','$rating');";
+						mysqli_query($conn,$sql);
 					}					
 				?>
 		</div>
