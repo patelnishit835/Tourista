@@ -77,7 +77,7 @@ if(isset($_SESSION['guide_user_signup'])) {
 						<a class="nav-link" href="GuideUserProfile.php?id=<?php echo $id?>">Profile</a>
 					</li>
 					<li class="nav-item nav-prod" id="logout">
-						<a class="nav-link" href="Logout.php" id="up">Logout</a>
+						<a class="nav-link" href="Logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -329,20 +329,14 @@ if(isset($_SESSION['guide_user_signup'])) {
 		{
 			$name = $_SESSION['guide_user_signup'];
 			echo "<script>
-			var l = document.getElementById('up');
-			l.innerHTML = '$name';
-			l.href = '#';
-			myFunction();
-			function myFunction() {
-			    var x = document.getElementById('log');
-			    if (x.style.display === 'none') {
-			        x.style.display = 'block';
-			    } else {
-			        x.style.display = 'none';
-			    }
-			}
-		  </script>";
-		}
+						var l = document.getElementById('log');
+						l.innerHTML = '$name';
+						l.href = '#';
+
+						var s = document.getElementById('signup');
+						s.innerHTML = '';
+						s.style.visibility = 'hidden';
+				  </script>";		}
 
 		/*-------------------------LOGIN AUTHENTICATION------------------------*/
 
