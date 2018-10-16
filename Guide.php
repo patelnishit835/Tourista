@@ -1,5 +1,28 @@
 <?php
 session_start();
+
+if(isset($_SESSION['guide_user_signup'])) {
+
+	$conn = mysqli_connect("localhost","root","");
+
+		$sql_create = "CREATE DATABASE IF NOT EXISTS Tourista";
+
+		if(mysqli_query($conn,$sql_create)){
+			$conn = mysqli_connect("localhost","root","","Tourista");
+		}
+		else {
+			echo mysqli_error($conn);
+		}
+
+	$name = $_SESSION['guide_user_signup'];
+	$sql = "select GuideID from guide where Name = '$name' limit 1";
+
+	$result = mysqli_fetch_array(mysqli_query($conn, $sql));
+
+	$id = $result[0];
+
+	// echo "<h1 style='color:#fff;'>".$id."</h1>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +74,7 @@ session_start();
 						<a class="nav-link" href="GuideSignUp.php" id="up">SIGN UP</a>
 					</li>
 					<li class="nav-item nav-prod" id="profile">
-						<a class="nav-link" href="GuideUserProfile.php">Profile</a>
+						<a class="nav-link" href="GuideUserProfile.php?id=<?php echo $id?>">Profile</a>
 					</li>
 					<li class="nav-item nav-prod" id="logout">
 						<a class="nav-link" href="Logout.php" id="up">Logout</a>
