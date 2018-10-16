@@ -124,7 +124,7 @@
 							$line = '';
 							if($fh = fopen($desc, 'r')){
 								$line = file_get_contents($desc);
-								$line = explode("\n", $line,2);
+								$line = explode(".", $line,2);
 								$line[0] = trim($line[0]);
 								fclose($fh);
 							}
