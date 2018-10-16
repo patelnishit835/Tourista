@@ -109,7 +109,11 @@
 
 					session_start();
 					$_SESSION['guide_user_signup'] = $name;
-					header("location: GuideUserProfile.php");
+					$sql = "SELECT GuideID FROM Guide WHERE Name = '$name'";
+					$result = mysqli_query($conn,$sql);
+					$row = mysqli_fetch_assoc($result);
+					$guideid = $row['GuideID'];
+					header("location: GuideUserProfile.php?id=".$guideid);
 				}
 				else{
 					// if($_POST['avail'] == "true"){
