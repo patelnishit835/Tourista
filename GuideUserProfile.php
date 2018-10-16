@@ -4,19 +4,18 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tourista</title>
+	<title>Guide Profile</title>
 
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
-    <!-- Font Awesome -->
+ 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap core CSS -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src="script.js"></script>
@@ -64,6 +63,22 @@ session_start();
 
 	</style>
 
+	<script>
+		function readURL(input)
+		{
+		    if (input.files && input.files[0]) 
+		    {
+		        var reader = new FileReader();
+		        reader.onload = function(e) {
+		            $('#userimg').attr('src', e.target.result);
+		            $('#userimg').hide();
+		            $('#userimg').fadeIn(650);
+		        }
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+	</script>
+
 </head>
 <body class="black-skin">
 
@@ -97,6 +112,40 @@ session_start();
 	</nav>
 
 	<?php
+
+		$id = $_GET['id'];
+		if(isset($_POST['save'])){
+			$name = $_POST['name'];
+			$emailid = $_POST['id'];
+			$pass = $_POST['password'];
+			$adhaar = $_POST['aadhar'];
+			$place_of_work = $_POST['work'];
+			$mobile = $_POST['mobile'];
+			$avail = 0;
+			if(isset($_POST['avail'])){
+				$avail = 1;
+			}
+
+			$target = "Guide/".basename($_FILES['profilepic']['name']);
+			move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
+			$_POST['profilepic'] = $_FILES['profilepic']['name'];
+			$image = $_POST['profilepic'];
+
+			$conn = mysqli_connect("localhost","root","","Tourista");
+			$sql = "SELECT PlaceID From Place WHERE Name = '$place_of_work'";
+			$result = mysqli_query($conn,$sql);
+			$row = mysqli_fetch_assoc($result);
+			$placeid = $row['PlaceID'];
+
+			if($image == ""){
+				$sql = "UPDATE Guide SET Name = '$name',EmailID = '$emailid', Password = '$pass', Aadhaar = '$adhaar', Place_of_Work = '$place_of_work', PlaceID = '$placeid', Mobile_No = '$mobile', Availability = '$avail' WHERE GuideID = '$id'";
+			}
+			else{
+				$sql = "UPDATE Guide SET Name = '$name',EmailID = '$emailid', Password = '$pass', Aadhaar = '$adhaar', Place_of_Work = '$place_of_work', PlaceID = '$placeid', Mobile_No = '$mobile', ProfilePic = '$image', Availability = '$avail' WHERE GuideID = '$id'";
+			}
+			mysqli_query($conn,$sql);
+		}
+
 		if(isset($_SESSION['login_user'])){
 			$s=$_SESSION['login_user'];
 			echo "<script>
@@ -170,6 +219,7 @@ session_start();
 
 	<?php
 		}
+
 		else if(isset($_SESSION['guide_user_signup'])){
 			$id = $_GET['id'];
 			$conn = mysqli_connect("localhost","root","","Tourista");
@@ -183,6 +233,7 @@ session_start();
 				$image = $row['ProfilePic'];
 				$mobile = $row['Mobile_No'];
 				$pass = $row['Password'];
+				$pass = trim($pass);
 				$aadhaar = $row['Aadhaar'];
 			}
 
@@ -190,7 +241,7 @@ session_start();
 
 			<div class="col-11 mx-auto">
 			<div class="card mt-3 bg-light">
-			<form method="POST" enctype="multipart/form-data" action="GuideUserProfile.php">
+			<form method="POST" enctype="multipart/form-data" action="GuideUserProfile.php?id=<?php echo $id;?>">
 			  <div class="card-header text-center">
 			    <h4><strong> Guide Details </strong></h4>
 			  </div>
@@ -199,50 +250,49 @@ session_start();
 			  		<div class="container">
 			  			<div>
 			  				<a onclick="document.getElementById('imageUpload').click(); return false;">
-			  					<img id="userimg" class="user hoverable" src="<?php echo $image;?>">
+			  					<img id="userimg" class="user hoverable" src="<?php echo 'Guide/'.$image;?>">
 			  				</a>
 			  			</div>
 			  			<div>
 			  				<!-- <button class="btn btn-secondary" onclick="document.getElementById('imageUpload').click(); return false;">Upload Photo</button> -->
-			  				<input type="file" name="profilepic" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg" required="true">
+			  				<input type="file" name="profilepic" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg" disabled="true">
 			  			</div>
 			  		</div>		  		
 			  	</div>
 			  	<div class="row">	
 		            <div class="md-form form-sm mb-4 col-md-6">
 		                <i class="fa fa-user prefix"></i>
-		                <input type="text" id="name" class="form-control form-control-sm validate" name="name" readonly="true" value="<?php echo $name;?>">
+		                <input type="text" id="name" class="form-control form-control-sm validate" name="name" disabled="true" value="<?php echo $name;?>">
 		                <label data-error="wrong" data-success="right" for="name" style="margin-left: 3.1rem;">Name</label>
 		            </div>
 			  		<div class="md-form form-sm mb-4 float-right col-md-6">
 		                <i class="fa fa-envelope prefix"></i>
-		                <input type="email" id="email" class="form-control form-control-sm validate" name="id" readonly="true" value="<?php echo $email;?>">
+		                <input type="email" id="email" class="form-control form-control-sm validate" name="id" disabled="true" value="<?php echo $email;?>">
 		                <label data-error="wrong" data-success="right" for="email" style="margin-left: 3.1rem;">Email</label>
 		            </div>
 		        </div>
 		        <div class="row">
 		            <div class="md-form form-sm mb-4 col-md-6">
 		                <i class="fa fa-lock prefix"></i>
-		                <input type="password" id="password" class="form-control form-control-sm validate" name="password" readonly="true" minlength="6" value="
-		                <?php echo $pass;?>">
+		                <input type="text" id="password" class="form-control form-control-sm validate" name="password" disabled="true" minlength="6" value="<?php echo $pass;?>">
 		                <label data-error="wrong" data-success="right" for="password" style="margin-left: 3.1rem;">Password</label>
 		            </div>
 		            <div class="md-form form-sm mb-4 float-right col-md-6">
 		                <i class="fa fa-credit-card prefix"></i>
-		                <input type="tel" id="aadhar" class="form-control form-control-sm validate" name="aadhar" readonly="true" minlength="12" maxlength="12" value="<?php echo $aadhaar;?>">
+		                <input type="tel" id="aadhar" class="form-control form-control-sm validate" name="aadhar" disabled="true" minlength="12" maxlength="12" value="<?php echo $aadhaar;?>">
 		                <label data-error="wrong" data-success="right" for="aadhar" style="margin-left: 3.1rem;">Aadhar</label>
 		            </div>
 		        </div>
 		        <div class="row">
 		            <div class="md-form form-sm mb-2 float-right col-md-6">
 		                <i class="fa fa-map-marker prefix"></i>
-		                <input type="text" id="work" class="form-control form-control-sm validate" name="work" readonly="true" value="<?php echo $place_of_work;?>">
+		                <input type="text" id="work" class="form-control form-control-sm validate" name="work" disabled="true" value="<?php echo $place_of_work;?>">
 		                <label data-error="wrong" data-success="right" for="work" style="margin-left: 3.1rem;">Place of Work</label>
 		            </div>
 	            	<div class="md-form form-sm mb-4 col-md-6">
 		            	<!-- Default switch -->
 						<label class="bs-switch ml-3">
-						  <input type="checkbox" name="avail">
+						  <input type="checkbox" name="avail" disabled="true" id="check" <?php if($availability==1) echo "checked='checked'";?> >
 						  <span class="slider round"></span>
 						</label>  
 		            	<label class="prefix mt-1" style="margin-left: 5.1rem">Availability</label>  
@@ -251,12 +301,15 @@ session_start();
 			  <div class="row">
 		            <div class="md-form form-sm mb-2 col-md-6">
 		                <i class="fa fa-phone prefix"></i>
-		                <input type="number" id="mobile" class="form-control form-control-sm validate" name="mobile" readonly="true" value="<?php echo $mobile?>">
+		                <input type="number" id="mobile" class="form-control form-control-sm validate" name="mobile" disabled="true" value="<?php echo $mobile?>">
 		                <label data-error="wrong" data-success="right" for="mobile" style="margin-left: 3.1rem;">Mobile Number</label>
 		            </div>
 		        </div>
 	        	<div class="center text-center form-sm mt-1">
-	                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1">SignUp</button>
+	                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="edit" name="edit" id="btn1" onclick="return handleEdit();">Edit</button>
+	            </div>
+	            <div class="center text-center form-sm mt-1">
+	                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="save" id="btn2" hidden="true">Save</button>
 	            </div>
 			</div>
 			</form>
@@ -369,5 +422,22 @@ session_start();
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>	
+
+	<script type="text/javascript">
+		function handleEdit(){
+			document.getElementById('imageUpload').disabled = false;
+			document.getElementById('name').disabled = false;
+			document.getElementById('email').disabled = false;
+			document.getElementById('password').disabled = false;
+			document.getElementById('aadhar').disabled = false;
+			document.getElementById('work').disabled = false;
+			document.getElementById('mobile').disabled = false;
+			document.getElementById('check').disabled = false;
+			document.getElementById('btn1').hidden = true;
+			document.getElementById('btn2').hidden = false;
+
+			return false;
+		}
+	</script>
 </body>
 </html>
