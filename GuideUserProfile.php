@@ -236,6 +236,17 @@ session_start();
 				$pass = trim($pass);
 				$aadhaar = $row['Aadhaar'];
 			}
+			$sql = "SELECT Rating FROM gRates WHERE GuideID = '$id'";
+			$result = mysqli_query($conn,$sql);
+			$avg=0;
+			while($row = mysqli_fetch_assoc($result)){
+				$avg = $avg + $row['Rating'];
+			}
+			$sql = "SELECT COUNT(*) as Total From gRates WHERE GuideID = '$id'";
+			$result = mysqli_query($conn,$sql);
+			$row = mysqli_fetch_assoc($result);
+			$n = $row['Total'];
+			$avg = (float)$avg/$n;
 
 			?>
 
@@ -301,8 +312,13 @@ session_start();
 			  <div class="row">
 		            <div class="md-form form-sm mb-2 col-md-6">
 		                <i class="fa fa-phone prefix"></i>
-		                <input type="number" id="mobile" class="form-control form-control-sm validate" name="mobile" disabled="true" value="<?php echo $mobile?>">
+		                <input type="number" id="mobile" class="form-control form-control-sm validate" name="mobile" disabled="true" value="<?php echo $mobile;?>">
 		                <label data-error="wrong" data-success="right" for="mobile" style="margin-left: 3.1rem;">Mobile Number</label>
+		            </div>
+		            <div class="md-form form-sm mb-2 col-md-6">
+		                <i class="fa fa-star prefix"></i>
+		                <input type="number" id="rating" class="form-control form-control-sm validate" name="rating" disabled="true" value="<?php echo $avg;?>">
+		                <label for="rating" style="margin-left: 3.1rem;">Avg. Rating</label>
 		            </div>
 		        </div>
 	        	<div class="center text-center form-sm mt-1">
