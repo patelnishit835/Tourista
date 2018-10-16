@@ -118,8 +118,8 @@
 
 						while ($row=mysqli_fetch_assoc($result)) {
 							$name = $row['Name'];
-							$img = $row['Image'];
-							$desc = $row['Description'];
+							$img = "Description/".$row['Image'];
+							$desc = "Description/".$row['Description'];
 							$count++;
 							$line = '';
 							if($fh = fopen($desc, 'r')){
