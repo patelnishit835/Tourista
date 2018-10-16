@@ -48,6 +48,9 @@
             <div>
             	<input type="hidden" name="mobile" value="<?php echo $_POST['mobile']; ?>">
             </div>
+            <div>
+            	<input type="hidden" name="avail" value="<?php echo $_POST['avail']; ?>">
+            </div>
 	        <div>
             	<input type="hidden" name="profilepic" value="<?php if(isset($_POST['profilepic'])){
             		echo $_POST['profilepic'];
@@ -72,13 +75,13 @@
 
 				// $to = 'akshay.kotak@somaiya.edu';
 				$subject = 'Tourista Email Verification';
-				$message = "Dear ".$name.", Your otp - ".$otp."\n"."Use it and verify yourself"."\n\n\n\n\n"."Regards,\nTourista.";
+				$message = "Dear ".$name.", Your OTP - ".$otp."\n"."Use it and Verify Yourself"."\n\n\n\n\n"."Regards,\nTourista.";
 				$headers = 'From: Tourista <touristafuntovisit@gmail.com>';
 				mail($email, $subject, $message, $headers);
 			}
 
 			if(isset($_POST['submitotp'])){
-				$inotp = (int)$_POST['otp'];
+				$inotp = $_POST['otp'];
 				// echo $_POST['oldotp']."<br>";
 				if($inotp == $_POST['oldotp']){
 					// echo "Successfull!!!";
@@ -98,10 +101,10 @@
 					$result = mysqli_query($conn,$sql);
 					$row = mysqli_fetch_assoc($result);
 					$placeid = $row['PlaceID'];
-					$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic',true,'$place_of_work','$placeid','$mobile')";
+					$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic','$availability','$place_of_work','$placeid','$mobile')";
 					
 					if(mysqli_query($conn,$sql)){
-						// echo"Successful";
+						echo"Successful";
 					}
 
 					session_start();
@@ -109,13 +112,13 @@
 					header("location: GuideUserProfile.php");
 				}
 				else{
-					if($_POST['avail'] == "1"){
-						//do nothing 
-					}
-					else{
-						 unset($_POST['avail']);
-					}
-					echo "OTP not Verified!!";
+					// if($_POST['avail'] == "true"){
+					// 	//do nothing 
+					// }
+					// else{
+					// 	 unset($_POST['avail']);
+					// }
+					// echo "OTP not Verified!!";
 				}
 			}
 

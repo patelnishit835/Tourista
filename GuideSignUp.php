@@ -120,8 +120,8 @@
             	<div class="md-form form-sm mb-4 col-md-6">
 	            	<!-- Default switch -->
 					<label class="bs-switch ml-3">
-					  <input type="checkbox" name="avail">
-					  <span class="slider round"></span>
+					<input type="checkbox" name="avail" value="1">
+					<span class="slider round"></span>
 					</label>  
 	            	<label class="prefix mt-1" style="margin-left: 5.1rem">Availability</label>  
 	            </div>	        	
