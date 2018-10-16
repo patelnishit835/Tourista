@@ -55,6 +55,13 @@ session_start();
 		  content: '\f006';
 		  font-family: FontAwesome;
 		}
+
+		.user{
+			width: 150px;
+			height: 150px;
+			border-radius: 100%;
+		}
+
 	</style>
 
 </head>
@@ -73,14 +80,16 @@ session_start();
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
 					</div>
-					<li class="nav-item nav-prod">
-						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
+					<li class="nav-item nav-prod" id="guide">
+						<a href="Guide.php" class="nav-link" id="guidea">GUIDE WITH US!</a>
 					</li>
-					<li class="nav-item nav-prod">
-						<a class="nav-link" data-toggle="modal" href="#modalLRForm" id="log">LOGIN/SIGN UP</a>
-					</li>
-					<li class="nav-item nav-prod">
-						<a class="nav-link" href="Logout.php" id="logout">Logout</a>
+					<div style="background-color: rgba(224, 18, 29, 0.75)" id="pro">
+						<li class="nav-item nav-prod" id="profile">
+							<a class="nav-link" href="GuideUserProfile.php?id=<?php echo $_GET['id'];?>">Profile</a>
+						</li>
+					</div>
+					<li class="nav-item nav-prod" id="logout">
+						<a class="nav-link" href="Logout.php" id="up">Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -89,6 +98,18 @@ session_start();
 
 	<?php
 		if(isset($_SESSION['login_user'])){
+			$s=$_SESSION['login_user'];
+			echo "<script>
+					var p = document.getElementById('profile');
+					p.innerHTML = '';
+					p.style.visibility = 'hidden';
+					
+					var g = document.getElementById('guidea');
+					g.innerHTML = '$s';
+					g.href = '#';
+
+				  </script>";
+
 			$id = $_GET['id'];
 			$conn = mysqli_connect("localhost","root","","Tourista");
 			$sql = "SELECT * FROM Guide WHERE GuideID = '$id'";
@@ -162,7 +183,7 @@ session_start();
 				$image = $row['ProfilePic'];
 				$mobile = $row['Mobile_No'];
 				$pass = $row['Password'];
-				$adhaar = $row['Aadhaar'];
+				$aadhaar = $row['Aadhaar'];
 			}
 
 			?>
@@ -178,7 +199,7 @@ session_start();
 			  		<div class="container">
 			  			<div>
 			  				<a onclick="document.getElementById('imageUpload').click(); return false;">
-			  					<img id="userimg" class="user hoverable" src="<?php echo $image?>">
+			  					<img id="userimg" class="user hoverable" src="<?php echo $image;?>">
 			  				</a>
 			  			</div>
 			  			<div>
@@ -208,7 +229,7 @@ session_start();
 		            </div>
 		            <div class="md-form form-sm mb-4 float-right col-md-6">
 		                <i class="fa fa-credit-card prefix"></i>
-		                <input type="tel" id="aadhar" class="form-control form-control-sm validate" name="aadhar" readonly="true" minlength="12" maxlength="12" value="<?php echo $aadhar;?>">
+		                <input type="tel" id="aadhar" class="form-control form-control-sm validate" name="aadhar" readonly="true" minlength="12" maxlength="12" value="<?php echo $aadhaar;?>">
 		                <label data-error="wrong" data-success="right" for="aadhar" style="margin-left: 3.1rem;">Aadhar</label>
 		            </div>
 		        </div>
@@ -270,7 +291,7 @@ session_start();
 			$sql = "SELECT * FROM gRates WHERE UserID='$userid' AND GuideID='$id'";
 			$result = mysqli_query($conn,$sql);
 			if(mysqli_num_rows($result)==1){
-				$sql = "UPDATE gRates SET Rating = '$rating' WHERE UserID = '$userid'";
+				$sql = "UPDATE gRates SET Rating = '$rating' WHERE UserID = '$userid' AND GuideID = '$id'";
 			}	
 			else{
 				$sql = "INSERT INTO gRates VALUES('$id','$userid','$rating')";
