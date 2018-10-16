@@ -80,7 +80,7 @@
 
 					$c = $_GET['category'];
 					$conn = mysqli_connect('localhost','root','','Tourista');
-					$sql = "SELECT Name,Description,Image FROM Place WHERE Category = '$c' AND Parent_Place ='NULL';";
+					$sql = "SELECT Name,Description,Image FROM Place WHERE Category = '$c' AND Parent_Place ='';";
 					if($result=mysqli_query($conn,$sql)){
 						echo "<html>
 						<head>
@@ -118,13 +118,13 @@
 
 						while ($row=mysqli_fetch_assoc($result)) {
 							$name = $row['Name'];
-							$img = "Description/".$row['Image'];
-							$desc = "Description/".$row['Description'];
+							$img = $row['Image'];
+							$desc = $row['Description'];
 							$count++;
 							$line = '';
 							if($fh = fopen($desc, 'r')){
 								$line = file_get_contents($desc);
-								$line = explode(".", $line,2);
+								$line = explode("\n", $line,2);
 								$line[0] = trim($line[0]);
 								fclose($fh);
 							}
