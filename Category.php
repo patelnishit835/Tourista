@@ -134,7 +134,7 @@
 
 							<!-- Card image -->
 							<div class='view overlay'>
-							<img class='card-img-top' src='$img'>
+							<img class='card-img-top img-thumbnail' src='$img'>
 							<a>
 							  <div class='mask rgba-white-slight'></div>
 							</a>

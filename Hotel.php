@@ -119,7 +119,7 @@
 				    			echo "<div class='carousel-item'>";
 				    		}
 ?>
-				    		<img class='d-block' src='<?php echo $path;?>' alt='First slide' height='400px'>
+				    		<img class='d-block img-thumbnail' src='<?php echo $path;?>' alt='First slide' height='400px'>
 				        			</div>
 
 <?php
