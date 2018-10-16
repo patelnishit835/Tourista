@@ -440,7 +440,7 @@
          		$result = mysqli_query($conn,$sql);
          		$row = mysqli_fetch_assoc($result);
          		$pid = $row['PlaceID'];
-         		$sql = "SELECT Name, Image, Details FROM Hotel WHERE PlaceID = '$pid'";
+         		$sql = "SELECT Name, Image, Details FROM Hotel WHERE PlaceID = '$pid' GROUP BY PlaceID,Name";
          		if($result=mysqli_query($conn,$sql)){
          			echo "<html>
 						<head>
