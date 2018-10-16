@@ -1,19 +1,5 @@
 <?php
 	session_start();
-  	if(isset($_SESSION['login_user']))
-		{
-		$username=$_SESSION['login_user'];
-		echo   "<script>
-				var l = document.getElementById('log');
-				l.innerHTML = '$username';
-				l.href = '#';
-
-				var g = document.getElementById('guide');
-				g.innerHTML = '';
-				g.style.visibility = 'hidden';
-
-			  	</script>";
-	}
 ?>
 
 <!DOCTYPE html>
@@ -204,6 +190,22 @@
 					elseif (isset($_POST['star1'])) {
 						$rating = 1;
 					}
+
+					if(isset($_SESSION['login_user']))
+					{
+						$username=$_SESSION['login_user'];
+						echo   "<script>
+								var l = document.getElementById('log');
+								l.innerHTML = '$username';
+								l.href = '#';
+
+								var g = document.getElementById('guide');
+								g.innerHTML = '';
+								g.style.visibility = 'hidden';
+
+							  	</script>";
+					}
+
 					if($rating!=0){
 						$sql = "SELECT UserID FROM User WHERE Name = '$username';";
 						$result = mysqli_query($conn,$sql);
