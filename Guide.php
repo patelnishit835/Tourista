@@ -131,8 +131,8 @@ session_start();
 	</div>
 	<!--/.Carousel Wrapper-->
 
-	<h1 class="title-header" align="center">Make Money. Earn Respect. Secure Your Future.</h1>
-	<h5 align="center" class="info">Apply now to become a Tourista guide-partner. Start earning more!</h5>
+	<h1 class="title-header" align="center" style="color:#fff;">Make Money. Earn Respect. Secure Your Future.</h1>
+	<h5 align="center" class="info" style="color: #fff;">Apply now to become a Tourista guide-partner. Start earning more!</h5>
 
 	<!-- Information -->
 
