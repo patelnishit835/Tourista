@@ -300,8 +300,8 @@
          		if($result=mysqli_query($conn,$sql)){
          			$row = mysqli_fetch_assoc($result);
          			$name = $row['Name'];
-         			$desc = $row['Description'];
-         			$img = $row['Image'];
+         			$desc = "Description/".$row['Description'];
+         			$img = "Description/".$row['Image'];
  					if($fh = fopen($desc, 'r')){
 						$line = file_get_contents($desc);
 						fclose($fh);
@@ -371,13 +371,13 @@
 
 						while($row=mysqli_fetch_assoc($result)){
 							$name = $row['Name'];
-							$img = $row['Image'];
-							$desc = $row['Description'];
+							$img = "Description/".$row['Image'];
+							$desc = "Description/".$row['Description'];
 							$count++;
 							$line = '';
 							if($fh = fopen($desc, 'r')){
 								$line = file_get_contents($desc);
-								$line = explode("\n", $line,2);
+								$line = explode(".", $line,2);
 								$line[0] = trim($line[0]);
 								fclose($fh);
 							}
@@ -479,13 +479,13 @@
 
 						while($row=mysqli_fetch_assoc($result)){
 							$name = $row['Name'];
-							$img = $row['Image'];
-							$desc = $row['Details'];
+							$img = "Description/Hotels/".$row['Image'];
+							$desc = "Description/Hotels/".$row['Details'];
 							$count++;
 							$line = '';
 							if($fh = fopen($desc, 'r')){
 								$line = file_get_contents($desc);
-								$line = explode("\n", $line,2);
+								$line = explode(".", $line,2);
 								$line[0] = trim($line[0]);
 								fclose($fh);
 							}
@@ -589,7 +589,7 @@
 
 						while($row=mysqli_fetch_assoc($result)){
 							$name = $row['Name'];
-							$img = $row['ProfilePic'];
+							$img = "Guide/".$row['ProfilePic'];
 							$email = $row['EmailID'];
 							$id = $row['GuideID'];
 							$count++;
