@@ -308,7 +308,10 @@
 					}
          			echo "<html>
          					<div class='container'>
-         						<img src = '$img' id='placeimage' class='img-fluid float-img' style='float:left;width:40%; margin-right:5%;margin-bottom:2%;' align = 'left'>
+         						<div class='row '>
+         						<img src = '$img' id='placeimage' class='mx-auto img-fluid img-responsive' style='margin-bottom:3%;'>
+         						</div>
+
          						<span style = 'margin-left:5%;'>$line</span>
          					</div>
          					<div id='myModal' class='modal modalh'>
