@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-if(isset($_SESSION['guide_user_signup'])) {
-
-	$conn = mysqli_connect("localhost","root","");
+$conn = mysqli_connect("localhost","root","");
 
 		$sql_create = "CREATE DATABASE IF NOT EXISTS Tourista";
 
@@ -14,6 +12,49 @@ if(isset($_SESSION['guide_user_signup'])) {
 			echo mysqli_error($conn);
 		}
 
+
+						if(isset($_POST['login'])) {
+							$id = $_POST['id'];
+							$pass = $_POST['pass'];
+							$count = 0;
+
+							$sql = "SELECT Password,EmailID
+									FROM Guide
+									WHERE EmailID = '$id' AND Password = '$pass'";
+
+							$result = mysqli_query($conn, $sql);
+							$count = mysqli_num_rows($result);
+
+							if($count == 0) {
+								echo "Invalid username or password....";
+							}
+							else {
+								$query = "SELECT Name
+										 FROM Guide
+										 WHERE EmailID = '$id' AND Password = '$pass' limit 1";
+
+								$name = mysqli_fetch_array(mysqli_query($conn, $query));
+
+								$_SESSION['guide_user_signup']=$name[0];
+								  echo "<script>
+										var l = document.getElementById('log');
+										l.innerHTML = '$name[0]';
+										l.href = '#';
+
+										var s = document.getElementById('signup');
+										s.innerHTML = '';
+										s.style.visibility = 'hidden';
+									  	</script>";
+							}
+						}
+						else {
+									echo mysqli_error($conn);
+									
+								}
+				
+
+if(isset($_SESSION['guide_user_signup'])) {
+
 	$name = $_SESSION['guide_user_signup'];
 	$sql = "select GuideID from guide where Name = '$name' limit 1";
 
@@ -22,6 +63,8 @@ if(isset($_SESSION['guide_user_signup'])) {
 	$id = $result[0];
 
 	// echo "<h1 style='color:#fff;'>".$id."</h1>";
+
+
 }
 ?>
 
@@ -73,6 +116,7 @@ if(isset($_SESSION['guide_user_signup'])) {
 					<li class="nav-item nav-prod" id="signup">
 						<a class="nav-link" href="GuideSignUp.php" id="up">SIGN UP</a>
 					</li>
+
 					<li class="nav-item nav-prod" id="profile">
 						<a class="nav-link" href="GuideUserProfile.php?id=<?php echo $id?>">Profile</a>
 					</li>
@@ -340,44 +384,44 @@ if(isset($_SESSION['guide_user_signup'])) {
 
 		/*-------------------------LOGIN AUTHENTICATION------------------------*/
 
-		if(isset($_POST['login'])) {
-			$id = $_POST['id'];
-			$pass = $_POST['pass'];
-			$count = 0;
+		// if(isset($_POST['login'])) {
+		// 	$id = $_POST['id'];
+		// 	$pass = $_POST['pass'];
+		// 	$count = 0;
 
-			$sql = "SELECT Password,EmailID
-					FROM Guide
-					WHERE EmailID = '$id' AND Password = '$pass'";
+		// 	$sql = "SELECT Password,EmailID
+		// 			FROM Guide
+		// 			WHERE EmailID = '$id' AND Password = '$pass'";
 
-			$result = mysqli_query($conn, $sql);
-			$count = mysqli_num_rows($result);
+		// 	$result = mysqli_query($conn, $sql);
+		// 	$count = mysqli_num_rows($result);
 
-			if($count == 0) {
-				echo "Invalid username or password....";
-			}
-			else {
-				$query = "SELECT Name
-						 FROM Guide
-						 WHERE EmailID = '$id' AND Password = '$pass' limit 1";
+		// 	if($count == 0) {
+		// 		echo "Invalid username or password....";
+		// 	}
+		// 	else {
+		// 		$query = "SELECT Name
+		// 				 FROM Guide
+		// 				 WHERE EmailID = '$id' AND Password = '$pass' limit 1";
 
-				$name = mysqli_fetch_array(mysqli_query($conn, $query));
+		// 		$name = mysqli_fetch_array(mysqli_query($conn, $query));
 
-				$_SESSION['guide_user_signup']=$name[0];
-				  echo "<script>
-						var l = document.getElementById('log');
-						l.innerHTML = '$name[0]';
-						l.href = '#';
+		// 		$_SESSION['guide_user_signup']=$name[0];
+		// 		  echo "<script>
+		// 				var l = document.getElementById('log');
+		// 				l.innerHTML = '$name[0]';
+		// 				l.href = '#';
 
-						var s = document.getElementById('signup');
-						s.innerHTML = '';
-						s.style.visibility = 'hidden';
-					  	</script>";
-			}
-		}
-		else {
-					echo mysqli_error($conn);
+		// 				var s = document.getElementById('signup');
+		// 				s.innerHTML = '';
+		// 				s.style.visibility = 'hidden';
+		// 			  	</script>";
+		// 	}
+		// }
+		// else {
+		// 			echo mysqli_error($conn);
 					
-				}
+		// 		}
 
 		if(!isset($_SESSION['guide_user_signup'])) {
 
