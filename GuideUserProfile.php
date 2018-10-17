@@ -168,7 +168,7 @@ session_start();
 				$email = $row['EmailID'];
 				$place_of_work = $row['Place_of_Work'];
 				$availability = $row['Availability'];
-				$image = $row['ProfilePic'];
+				$image = "Guide/".$row['ProfilePic'];
 				$mobile = $row['Mobile_No'];
 				$pass = $row['Password'];
 				$adhaar = $row['Aadhaar'];
