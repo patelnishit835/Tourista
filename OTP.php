@@ -81,7 +81,7 @@
 			}
 
 			if(isset($_POST['submitotp'])){
-				$inotp = $_POST['otp'];
+				$inotp = (int)$_POST['otp'];
 				// echo $_POST['oldotp']."<br>";
 				if($inotp == $_POST['oldotp']){
 					// echo "Successfull!!!";
@@ -103,9 +103,7 @@
 					$placeid = $row['PlaceID'];
 					$sql = "INSERT INTO Guide VALUES('$name','','$email','$password','$aadhar','$profilepic','$availability','$place_of_work','$placeid','$mobile')";
 					
-					if(mysqli_query($conn,$sql)){
-						echo"Successful";
-					}
+					mysqli_query($conn,$sql);
 
 					session_start();
 					$_SESSION['guide_user_signup'] = $name;
