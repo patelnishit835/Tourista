@@ -69,6 +69,7 @@
 
 	<div class="col-11 mx-auto">
 		<div class="card mt-3 bg-light">
+		<form method="POST" enctype="multipart/form-data" action="OTP.php">
 		  <div class="card-header text-center">
 		    <h4><strong> Guide SignUp </strong></h4>
 		  </div>
@@ -82,33 +83,65 @@
 		  			</div>
 		  			<div>
 		  				<!-- <button class="btn btn-secondary" onclick="document.getElementById('imageUpload').click(); return false;">Upload Photo</button> -->
-		  				<input type="file" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg"/>
+		  				<input type="file" name="profilepic" onchange="readURL(this);" id="imageUpload" style="visibility: hidden;" accept=".png, .jpg, .jpeg" required="true">
 		  			</div>
 		  		</div>		  		
 		  	</div>
 		  	<div class="row">	
-	            <div class="md-form form-sm mb-4">
-	                <i class="fa fa-envelope prefix"></i>
-	                <input type="email" id="name" class="form-control form-control-sm validate" name="name" required>
-	                <label data-error="wrong" data-success="right" for="name">Enter Name</label>
+	            <div class="md-form form-sm mb-4 col-md-6">
+	                <i class="fa fa-user prefix"></i>
+	                <input type="text" id="name" class="form-control form-control-sm validate" name="name" required>
+	                <label data-error="wrong" data-success="right" for="name" style="margin-left: 3.1rem;">Enter Name</label>
 	            </div>
-		  		<div class="md-form form-sm mb-4 float-right">
+		  		<div class="md-form form-sm mb-4 float-right col-md-6">
 	                <i class="fa fa-envelope prefix"></i>
 	                <input type="email" id="email" class="form-control form-control-sm validate" name="id" required>
-	                <label data-error="wrong" data-success="right" for="email">Enter Email</label>
+	                <label data-error="wrong" data-success="right" for="email" style="margin-left: 3.1rem;">Enter Email</label>
 	            </div>
 	        </div>
-            <div class="md-form form-sm mb-4">
-                <i class="fa fa-envelope prefix"></i>
-                <input type="password" id="password" class="form-control form-control-sm validate" name="password" required>
-                <label data-error="wrong" data-success="right" for="password">Enter Password</label>
-            </div>
+	        <div class="row">
+	            <div class="md-form form-sm mb-4 col-md-6">
+	                <i class="fa fa-lock prefix"></i>
+	                <input type="password" id="password" class="form-control form-control-sm validate" name="password" required minlength="6">
+	                <label data-error="wrong" data-success="right" for="password" style="margin-left: 3.1rem;">Enter Password</label>
+	            </div>
+	            <div class="md-form form-sm mb-4 float-right col-md-6">
+	                <i class="fa fa-credit-card prefix"></i>
+	                <input type="tel" id="aadhar" class="form-control form-control-sm validate" name="aadhar" required minlength="12" maxlength="12">
+	                <label data-error="wrong" data-success="right" for="aadhar" style="margin-left: 3.1rem;">Enter Aadhar</label>
+	            </div>
+	        </div>
+	        <div class="row">
+	            <div class="md-form form-sm mb-2 float-right col-md-6">
+	                <i class="fa fa-map-marker prefix"></i>
+	                <input type="text" id="work" class="form-control form-control-sm validate" name="work" required>
+	                <label data-error="wrong" data-success="right" for="work" style="margin-left: 3.1rem;">Enter Place of Work</label>
+	            </div>
+            	<div class="md-form form-sm mb-4 col-md-6">
+	            	<!-- Default switch -->
+					<label class="bs-switch ml-3">
+					<input type="checkbox" name="avail" value="1">
+					<span class="slider round"></span>
+					</label>  
+	            	<label class="prefix mt-1" style="margin-left: 5.1rem">Availability</label>  
+	            </div>	        	
 		  </div>
+		  <div class="row">
+	            <div class="md-form form-sm mb-2 col-md-6">
+	                <i class="fa fa-phone prefix"></i>
+	                <input type="number" id="mobile" class="form-control form-control-sm validate" name="mobile" required>
+	                <label data-error="wrong" data-success="right" for="mobile" style="margin-left: 3.1rem;">Enter Mobile Number</label>
+	            </div>
+	        </div>
+	        <div>
+	        	<input type="hidden" name="oldotp" value="<?php echo rand(10000000,99999999); ?>">
+	        </div>
+        	<div class="center text-center form-sm mt-1">
+                <button class="btn btn-info btn-outline-black waves-effect ml-auto lighten-2" type="submit" name="submit" id="btn1">SignUp</button>
+            </div>
 		</div>
+		</form>
 	</div>
-
-
-
 
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -118,5 +151,6 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+
 </body>
 </html>

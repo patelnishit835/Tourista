@@ -45,10 +45,54 @@
 			border-bottom: white solid 2px;
 		}
 
+		.search-box{
+	        width: 300px;
+	        position: relative;
+	        display: inline-block;
+	        font-size: 14px;
+	    }
+	    .search-box input[type="text"]{
+	        height: 32px;
+	        padding: 5px 10px;
+	        border: 1px solid #CCCCCC;
+	        font-size: 14px;
+	    }
+	    .result{
+	        position: absolute;        
+	        z-index: 999;
+	        top: 100%;
+	        left: 0;
+	    }
+	    .search-box input[type="text"], .result{
+	        width: 100%;
+	        box-sizing: border-box;
+	    }
+	    /* Formatting result items */
+	    .result p{
+	        margin: 0;
+	        padding: 7px 10px;
+	        border: 1px solid #CCCCCC;
+	        border-top: none;
+	        cursor: pointer;
+	    }
+
+	    /*Suggestions css*/
+
+	    .autocomplete {
+	    	background-color: white;
+	    	width: 75%;
+	    	color: black;
+	    	text-align: left;
+	    	align-self: center;
+	    	margin: auto;
+	    	border-radius: 30px 30px 30px 30px;
+	    	color: black;
+	    }
+
 
 		.parallax1 { 
 		    /* The image used */
-		    background-image: url("adventure1.jpg");
+		    background-image: url("Homepage Images/adventure2.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -64,7 +108,7 @@
 		}
 
 		.parallax2 {
-			background-image: url("family-vacation.jpg");
+			background-image: url("Homepage Images/family-vacation.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -80,7 +124,7 @@
 		}
 
 		.parallax3 {
-			background-image: url("heritage.jpg");
+			background-image: url("Homepage Images/heritage.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -95,7 +139,7 @@
 		}
 
 		.parallax4 {
-			background-image: url("hills.jpg");
+			background-image: url("Homepage Images/hills.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -110,7 +154,7 @@
 		}
 
 		.parallax5 {
-			background-image: url("beaches.jpg");
+			background-image: url("Homepage Images/beaches.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -125,7 +169,7 @@
 		}
 
 		.parallax6 {
-			background-image: url("leisure.jpg");
+			background-image: url("Homepage Images/leisure.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -140,7 +184,7 @@
 		}
 
 		.parallax7 {
-			background-image: url("pilgrimage.jpg");
+			background-image: url("Homepage Images/pilgrimage.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -155,7 +199,7 @@
 		}
 
 		.parallax8 {
-			background-image: url("wildlife.jpg");
+			background-image: url("Homepage Images/wildlife.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 
@@ -170,7 +214,7 @@
 		}
 
 		.parallax9 {
-			background-image: url("romantic.jpg");
+			background-image: url("Homepage Images/romantic.jpg");
 
 		    /* Set a specific height */
 		    height: 610px; 

@@ -39,7 +39,7 @@
 						<a href="index.php" class="nav-link">HOME</a>
 					</li>
 					</div>
-					<li class="nav-item nav-prod" id="guide">
+					<li class="nav-item nav-prod">
 						<a href="Guide.php" class="nav-link">GUIDE WITH US!</a>
 					</li>
 					<li class="nav-item nav-prod">
@@ -201,9 +201,9 @@
 		
 		<div class="container">
 			<form id="demo-2" action="search.php" method="POST">
-				<input type="search" name="search" placeholder="Search your place..." class="fonts" id="search" autocomplete="off">
+				<input type="search" name="search" placeholder="Search your place..." class="fonts" id="search">
 			</form>
-			<div id="display" class="autocomplete"></div>
+			<div id="display"></div>
 		</div>
 		
 	</div>
@@ -226,7 +226,7 @@
 				<h1>FAMILY VACATION</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
 				<!-- <form action="Category.php" method="POST"> -->
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="Family Vacation" name="cat" type="submit">Know More</button>
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="family" name="cat" type="submit">Know More</button>
 				</form>
 			</div>
 		</div>
@@ -303,11 +303,20 @@
 				<h1>ROMANCE</h1>
 				<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea.</p>
 				<!-- <form action="Category.php" method="POST"> -->
-					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="Romantic" name="cat" type="submit">Know More</button>
+					<button class="btn waves-effect btn-lg btn-floating mdb-color lighten-4 onc" value="romance" name="cat" type="submit">Know More</button>
 				<!-- </form> -->
 			</div>
 		</div>
 	</div>
+
+	<!-- <div class = "para slideInUp" style = "color : white;">
+		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
+		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
+		</p>
+		<p>Lorem ipsum dolor sit amet, his ei quod senserit. Pro cu sumo bonorum torquatos, eu mazim habemus eum, ea quo dico definitionem. Duo ei graeci persius eligendi, ne pri lorem debet conceptam. Ad tota eligendi vix, mel ei altera lobortis, suavitate voluptaria ius ea. Vis ne quodsi utroque, in vix inermis ullamcorper.</p>
+		<p>Ne noster causae eleifend cum, sed no homero nemore. Sea dicit soluta voluptua eu. Ancillae euripidis te nec, recusabo pertinacia complectitur duo et. Possim disputationi mei in. Partem vivendo partiendo an sit, quo solum nonumy ad, iriure oblique percipit et pro. His et copiosae principes urbanitas, eos adhuc vidisse ut, duo ne lorem alienum atomorum. Cu inermis evertitur sed, tollit graeco ea nam, qui nonumy singulis ut.
+		</p>
+	</div> -->
 
 	<!-- Footer -->
 <footer class="page-footer font-small" style="background-color: rgba(32,32,32,1)">
@@ -381,11 +390,6 @@
 						var l = document.getElementById('log');
 						l.innerHTML = '$s';
 						l.href = '#';
-
-						var g = document.getElementById('guide');
-						g.innerHTML = '';
-						g.style.visibility = 'hidden';
-
 					  	</script>";
 		}
 
@@ -474,7 +478,6 @@
 					Availability BOOLEAN NOT NULL,
 					Place_of_Work VARCHAR(50) NOT NULL,
 					PlaceID INTEGER NOT NULL,
-					Mobile_No VARCHAR(10) NOT NULL,
 					FOREIGN KEY(PlaceID) REFERENCES Place(PlaceID),
 					PRIMARY KEY(GuideID)
 				);";
@@ -563,11 +566,6 @@
 							var l = document.getElementById('log');
 							l.innerHTML = '$name';
 							l.href = '#';
-
-							var g = document.getElementById('guide');
-							g.innerHTML = '';
-							g.style.visibility = 'hidden';
-
 						  	</script>";
 				}
 				else {
@@ -605,10 +603,6 @@
 						var l = document.getElementById('log');
 						l.innerHTML = '$name[0]';
 						l.href = '#';
-
-						var g = document.getElementById('guide');
-						g.innerHTML = '';
-						g.style.visibility = 'hidden';
 					  	</script>";
 			}
 		}
@@ -617,45 +611,40 @@
 					
 				}
 
-		if(isset($_SESSION['login_user'])) {
-
-			echo "<script>
-					var g = document.getElementById('guide');
-					g.innerHTML = '';
-					g.style.visibility = 'hidden';
-				</script>";
-		}
-
-		if(!isset($_SESSION['login_user'])) {
-
-			echo "<script>
-					var g = document.getElementById('logout');
-					g.innerHTML = '';
-					g.style.visibility = 'hidden';
-				</script>";
-		}
-
-		if(isset($_SESSION['guide_user_signup'])) {
-
-			echo "<script>
-					var g = document.getElementById('log');
-					g.innerHTML = '';
-					g.style.visibility = 'hidden'; 
-				</script>";
-		}
-
-		if(isset($_SESSION['guide_user_signup'])) {
-
-			echo "<script>
-					var g = document.getElementById('logout');
-					g.innerHTML = 'Logout';
-					g.style.visibility =  'visible';
-				</script>";
-		}
-
 
 	/*------------------------------------LIVE SEARCH-----------------------------------------*/
 
+		// if(isset($_REQUEST["term"])){
+		//     // Prepare a select statement
+		//     $sql = "SELECT Name
+		//     		FROM Place
+		//     		WHERE Name LIKE ?";
+		    
+		//     if($stmt = mysqli_prepare($conn, $sql)){
+		//         // Bind variables to the prepared statement as parameters
+		//         mysqli_stmt_bind_param($stmt, "s", $param_term);
+		        
+		//         // Set parameters
+		//         $param_term = $_REQUEST["term"] . '%';
+		        
+		//         // Attempt to execute the prepared statement
+		//         if(mysqli_stmt_execute($stmt)){
+		//             $result = mysqli_stmt_get_result($stmt);
+		            
+		//             // Check number of rows in the result set
+		//             if(mysqli_num_rows($result) > 0){
+		//                 // Fetch result rows as an associative array
+		//                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+		//                     echo "<p>" . $row["name"] . "</p>";
+		//                 }
+		//             } else{
+		//                 echo "<p>No matches found</p>";
+		//             }
+		//          } else{
+		//             echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+		//         }
+		//     }
+		// }
 
 		if(isset($_POST['search'])) {
 
@@ -729,7 +718,36 @@
 			window.location = 'Category.php?category=' + cat;
 		});
 
-	
+		// $(document).ready(function() {
+		// 	$('#keyword').on("keyup input", function() {
+
+		// 		// Get input value on change
+
+		// 		var inputVal = $(this).val();
+
+		// 		var resultDropdown = $(this).siblings(".result");
+
+		// 		if(inputVal.length) {
+		// 			$.pos("index.php", {term: inputVal}).done(function(data) {
+		// 				resultDropdown.html(data);
+		// 			});
+		// 		}
+		// 		else {
+		// 			resultDropdown.empty();
+		// 		}
+
+		// 	});
+
+		// 	// Set search input value on selecting the item
+
+		// 	$(document).on("click", ".result p", function() {
+
+		// 		$(this).parents(".search-box").find('input[type  = "text"]').val($(this).text());
+
+		// 		$(this).parent(".result").empty();
+		// 	});
+
+		// });
 
 		//Getting value from "ajax.php".
 
@@ -807,15 +825,6 @@
 
 		   });
 
-		});
-
-		$(document).ready(function() {
-
-			$(".para").click(function() {
-				$("#display").html("");
-
-				$("#search").val("");
-			});
 		});
 			
 	</script>
